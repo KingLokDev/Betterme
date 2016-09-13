@@ -687,7 +687,6 @@
 					},
 					dataType: "jsonp",
 					success: function(data) {
-						console.log(data);
 						if(data.meta.status==200) {
 							if(typeof data.response.posts!=='undefined' && data.response.posts.length > 0) {
 								var post = data.response.posts;
@@ -1084,11 +1083,27 @@
                             	tmp_footer_link_name = (jQuery(this)[0].gsx$footerbuttonname.$t)
                         }
                         
+                        var tmp_footer_link_bg_color = '#a61753';
+                        var tmp_footer_link_text_color = '#fff';
+                        if(
+                                typeof jQuery(this)[0].gsx$footerlinkbgcolor!='undefined' &&
+                                typeof jQuery(this)[0].gsx$footerlinkbgcolor.$t!='undefined' &&
+                                jQuery(this)[0].gsx$footerlinkbgcolor.$t!='' &&
+                                typeof jQuery(this)[0].gsx$footerlinktextcolor!='undefined' &&
+                                typeof jQuery(this)[0].gsx$footerlinktextcolor.$t!='undefined' &&
+                                jQuery(this)[0].gsx$footerlinktextcolor.$t!=''
+                        ) {
+                            tmp_footer_link_bg_color = (jQuery(this)[0].gsx$footerlinkbgcolor.$t)
+                            tmp_footer_link_text_color = (jQuery(this)[0].gsx$footerlinktextcolor.$t)
+                        }
+                        
                         footer_templates.push({
                         	text:tmp_footer_text,
                         	fd_top:tmp_footer_hd,
                         	fd_end:tmp_footer_ed,
                         	flink:tmp_footer_link,
+                        	flinkbgcolor: tmp_footer_link_bg_color,
+                        	flinktextcolor: tmp_footer_link_text_color,
                         	flink_name:tmp_footer_link_name
                         });
                     }
@@ -1116,6 +1131,7 @@
                     
                 if(footer_templates.flink!='') {
                 		jQuery('.footer-text-container a.footer-decoration-end-button').attr('href', footer_templates.flink); 
+                		jQuery('.footer-text-container a.footer-decoration-end-button').css({'background-color':footer_templates.flinkbgcolor, 'color':footer_templates.flinktextcolor}); 
                 		jQuery('.footer-text-container a.footer-decoration-end-button').text(footer_templates.flink_name); 
                 } else 
              				jQuery('.footer-text-container a.footer-decoration-end-button').remove(); 	   		
@@ -1978,7 +1994,7 @@
                                 		$(this).remove();
                                 	}
                                 	
-                                	console.log("Tag : " + tmp_tag_text);
+                                	//console.log("Tag : " + tmp_tag_text);
                                 	
                                 	if(tmp_tag_text.indexOf("hideCoverImage") >= 0) {
                                 		showing_cover_image = false;
