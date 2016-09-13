@@ -1,0 +1,2252 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]><html class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
+<head>
+    {MobileAppHeaders}
+    <meta charset="utf-8">
+    <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}">
+    {/block:Description}
+    <!-- Force set OG -->
+    {block:PermalinkPage}{block:Posts}
+    {block:Photo}{block:HighRes}
+    <meta name="og:image" content="{PhotoURL-HighRes}" />
+    {/block:HighRes}{/block:Photo}
+    <meta name="og:title" content="{Title}" />
+    {/block:Posts}{/block:PermalinkPage}
+    <!-- Force set OG -->
+
+    {block:Hidden}
+    <meta name="if:Sliding header" content="1">
+    <meta name="if:Show navigation" content="1">
+    <meta name="if:Endless scrolling" content="1"> 
+    <meta name="if:Syntax highlighting" content="0">
+    <meta name="select:Layout" content="regular" title="Regular">
+    <meta name="select:Layout" content="narrow" title="Narrow">
+    <meta name="select:Layout" content="grid" title="Grid">
+    <meta name="text:Disqus shortname" content="">
+    <meta name="text:Google analytics ID" content="">
+    
+    <meta name="if:EnableHomePageSlide1" content="0"/>
+    <meta name="if:EnableHomePageSlide2" content="0"/>
+    <meta name="if:EnableHomePageSlide3" content="0"/>
+    <meta name="if:EnableHomePageSlide4" content="0"/>
+    <meta name="if:EnableHomePageSlide5" content="0"/>
+    <meta name="if:EnableFeaturedStorySlide1" content="0"/>
+    <meta name="if:EnableFeaturedStorySlide2" content="0"/>
+    <meta name="if:EnableFeaturedStorySlide3" content="0"/>
+    <meta name="if:EnableFeaturedStorySlide4" content="0"/>
+    <meta name="if:EnableFeaturedStorySlide5" content="0"/>
+    <meta name="if:EnableMonthlyThemeSetting" content="0"/>
+
+    <meta name="image:HomePageSlide1" content="0"/>
+    <meta name="image:HomePageSlide2" content="0"/>
+    <meta name="image:HomePageSlide3" content="0"/>
+    <meta name="image:HomePageSlide4" content="0"/>
+    <meta name="image:HomePageSlide5" content="0"/>
+    <meta name="image:FeaturedStorySlide1" content="0"/>
+    <meta name="image:FeaturedStorySlide2" content="0"/>
+    <meta name="image:FeaturedStorySlide3" content="0"/>
+    <meta name="image:FeaturedStorySlide4" content="0"/>
+    <meta name="image:FeaturedStorySlide5" content="0"/>
+    <meta name="text:HomePageSlide1URL" content=""/>
+    <meta name="text:HomePageSlide2URL" content=""/>
+    <meta name="text:HomePageSlide3URL" content=""/>
+    <meta name="text:HomePageSlide4URL" content=""/>
+    <meta name="text:HomePageSlide5URL" content=""/>
+    <meta name="text:FeaturedStorySlide1URL" content=""/>
+    <meta name="text:FeaturedStorySlide2URL" content=""/>
+    <meta name="text:FeaturedStorySlide3URL" content=""/>
+    <meta name="text:FeaturedStorySlide4URL" content=""/>
+    <meta name="text:FeaturedStorySlide5URL" content=""/>
+    <meta name="text:MonthlyThemeSetting" content="0"/>
+		<meta name="text:ListingPostPerPage" content="9"/>
+		<meta name="text:RelatedPostPerPage" content="6"/>
+
+    <meta name="text:TumblrAPIKey" content="D7beWsUgS9y3AIzaXh952GtGwMqzDzhmdRXoBZuCJWVOs4bKKe">
+		<meta name="text:SpaceID" content="1197763169">
+    {/block:Hidden}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="http://66.media.tumblr.com/avatar_e3f91f25e92e_128.png">
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+    <link rel="stylesheet" href="http://static.tumblr.com/27gzhx7/KuHo5y0y8/main-min.css">
+    {block:IfSyntaxHighlighting}
+    <link rel="stylesheet" href="http://static.tumblr.com/ehm1tdz/2VWnye81h/tumblr-highlightjs.css">
+    {/block:IfSyntaxHighlighting}
+
+    <!-- HTML5 Shiv -->
+    <!--[if lt IE 9]>
+    <script src="http://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
+    <![endif]-->
+
+    <style>
+        /* Colors */
+        body {
+        background: {BackgroundColor};
+        }
+
+        .blog-title {
+        font-family: {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+        font-weight: {TitleFontWeight};
+        }
+
+        .blog-title a,
+        .description,
+        .search-no-results,
+        .likes-no-likes {
+        color: {TitleColor};
+        }
+
+        a {
+        color: {AccentColor};
+        }
+
+        #pagination a,
+        .nav-wrapper .nav-item .label {
+        color: {AccentColor};
+        }
+
+        #pagination a.next:after {
+        border-left-color: {AccentColor};
+        }
+
+        #pagination a.previous:after {
+        border-right-color: {AccentColor};
+        }
+
+        .loader .loader-bar {
+        background-color: {TitleColor};
+        }
+
+        .header-image.cover {
+            background-image: url({HeaderImage});
+        }
+
+        .user-avatar {
+        background-color: {BackgroundColor};
+        border-color: {BackgroundColor};
+        }
+
+        .avatar-style-square .user-avatar {
+        -webkit-box-shadow: 0 0 0 4px {BackgroundColor};
+        box-shadow: 0 0 0 4px {BackgroundColor};
+        }
+
+        .no-header-image .logo-wrapper,
+        .contain-header-image .logo-wrapper {
+        color: {AccentColor};
+        }
+
+        /* Adjust logo for light accents on light backgrounds */
+        .light-on-light.no-header-image .logo-wrapper,
+        .light-on-light.contain-header-image .logo-wrapper {
+            color: #444;
+        }
+
+        /* Adjust logo for dark accents on dark backgrounds */
+        .dark-on-dark.no-header-image .logo-wrapper,
+        .dark-on-dark.contain-header-image .logo-wrapper {
+            color: #fff;
+        }
+
+        .related-posts-wrapper > h2 {
+        color: {TitleColor};
+        }
+
+        @media screen and (max-device-width: 568px) {
+            .header-image.cover {
+                background-image: url({HeaderImage-640});
+                -webkit-background-size: cover;
+                background-size: cover;
+            }
+
+            .avatar-style-square .user-avatar {
+	            -webkit-box-shadow: 0 0 0 3px {BackgroundColor};
+	            -moz-box-shadow: 0 0 0 3px {BackgroundColor};
+	            box-shadow: 0 0 0 3px {BackgroundColor};
+		        }
+
+        }
+
+        /* Custom CSS */
+        {CustomCSS}
+    </style>
+
+    <link rel="stylesheet" href="http://static.tumblr.com/3yh6fjw/yGto6823l/font-awesome.min.css"><!-- Theme CSS -->
+    <!--<link rel="stylesheet" href="http://static.tumblr.com/8wlin78/ihUnzr8ne/elisetheme.min.css">--><!-- Theme CSS -->
+    <!--<link rel="stylesheet" href="http://onyourmarkstudio.com/tmp/betterme_magazine/betterme_magazine.css"><!-- Theme CSS -->
+
+    <link rel="stylesheet" href="http://static.tumblr.com/3yh6fjw/2Jpo5z9h1/bootstrap.min.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/3yh6fjw/96zo5za1z/style.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/3yh6fjw/HAio5za3t/style-responsive.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/3yh6fjw/ew4o5za6o/animate.min.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/3yh6fjw/jRXo5za7q/vertical-rhythm.min.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/3yh6fjw/WBDo5za9t/owl.carousel.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/3yh6fjw/2UTo5zaaw/magnific-popup.css">
+
+    <style>
+            .post-content .body-text .tmblr-embed, .post-content .body-text .tmblr-full, .post-content .caption .tmblr-embed, .post-content .caption .tmblr-full {margin-left: 0; margin-right: 0;}
+        /* Override */
+        @-webkit-keyframes rotation{from{-webkit-transform:rotate(0)}to{-webkit-transform:rotate(359deg)}}
+        @keyframes rotation{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
+
+        .tmp-article-setting-wrapper,
+        .article-setting {display: none !important;}
+        .tmblr-iframe {display: none !important;}
+        a {color: inherit; text-decoration: none;}
+        a:hover {text-decoration: none !important;}
+        body {
+            color: #333;
+            font-family: "Microsoft JhengHei", arial, sans-serif;
+            font-size: 16px;
+            /*background-color:#fafafa;*/
+        }
+        .header-s1{background-color:white;}
+        .owl-wrapper .owl-item .row {margin-left: 0; margin-right: 0;}
+				header#top .row {margin: 0;}
+				
+        .font-alt {font-family:  Dosis, "Microsoft JhengHei", arial, sans-serif;}
+        .font-alt-nav{font-family: Dosis, sans-serif;}
+
+        .nopadding {padding: 0;}
+        .nomargin {margin: 0;}
+        
+        .bg-white{background:white;}
+        hr.full-width {width: 100%;}
+        html {height: auto;}
+        .avatar-hidden .blog-title,
+        .blog-title {margin-top: 0;}
+        .blog-title .wrap {
+            font-size: 42px;
+        }
+        h1.blog-name {margin: 0; font-size: inherit;}
+        h1.monthly-title {
+            margin: 0;
+            font-size: 1.8em;
+            letter-spacing: 0.7em;
+        }
+        .mothly-theme-month{margin:0px;}
+        .monthly-desc-wrap{
+            letter-spacing: 0.3em;
+            font-family: dosis;
+            font-size: 1em;
+        }
+    
+        .blog-item-data {margin-bottom: 0px;}
+        .post-content .caption{margin: 20px 0;}
+        .post-content img {margin: 15px 0;}
+        .mb-15 {margin-bottom: 15px;}
+        
+        .blog-title .wrap {
+            border-color: #434343;
+            font-size: 42px;
+            display: inline-block;
+            position: relative;
+            transition: all 320ms ease;
+            width: 100%;
+            background: transparent url("http://static.tumblr.com/r1iexbw/eryo3prqd/logo_header.svg") center center no-repeat;
+            /* background-size: auto 60px; */
+            padding-top: 40px;
+            padding-bottom: 40px;
+            vertical-align: middle;
+        }
+        .blog-title .blog-name {
+            padding: 14px 20px;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            text-decoration: none;
+            text-indent: -999999px;
+            text-transform: capitalize;
+        }
+        .nav-menu-wrap .main-nav {
+            border-top: 1px solid #ddd;
+            border-bottom: 3px solid #D8D8D8;
+            height: 64px !important;
+            background: rgba(255, 255, 255, .95);
+        }
+        .nav-menu-wrap .main-nav.mobile-on {
+            margin: 0 2%;
+            width: 96% !important;
+            border-width: 1px;
+        }
+        .nav-menu-wrap .main-nav.small-height {
+            height: 59px !important;
+        }
+        .nav-menu-wrap .main-nav .full-wrapper .mobile-nav {
+            float: none;
+            border: 0 none;
+        }
+        .mobile-nav .fa {
+            color:#D8D8D8;
+        }
+        .mobile-logo {
+            display: none;
+        }
+        .mobile-on .mobile-logo {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        .mobile-on .mobile-logo .wrap.none {
+            padding: 0;
+            vertical-align: top;
+            font-size: 50px;
+            background-size: auto 75%;
+        }
+        .mobile-on .mobile-logo .wrap.none h1 {
+            padding: 0;
+        }
+        .nav-menu-wrap .mobile-on.main-nav .full-wrapper .inner-nav.desktop-nav ul {
+            width: 100%;
+        }
+				.nav-menu-wrap .main-nav .full-wrapper .inner-nav.desktop-nav ul li.current-tag::after {
+					width: 20px;
+					height: 10px;
+					display: block;
+					content: '';
+					border-width: 0 10px 10px 10px;
+					border-color: transparent transparent #D8D8D8 transparent;
+					border-style: solid;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					margin: 0 auto;
+				}
+				.nav-menu-wrap .mobile-on.main-nav .full-wrapper .inner-nav.desktop-nav ul li.current-tag::after {
+					display: none;
+				}
+        .nav-menu-wrap .mobile-on.main-nav .full-wrapper .inner-nav.desktop-nav ul li a {
+            background-color: #EDEDED;
+            color: #ABABAB;
+            font-size: 16px;
+        }
+        .nav-menu-wrap .mobile-on.main-nav .full-wrapper .inner-nav.desktop-nav ul li a:hover {
+            color: #fff;
+        }
+        .nav-menu-wrap .main-nav .full-wrapper .inner-nav.desktop-nav {
+            float: none;
+            width: 100%;
+            text-align: center;
+        }
+        .nav-menu-wrap .main-nav .full-wrapper .inner-nav.desktop-nav ul {
+            float: none;
+            width: auto;
+            text-align: center;
+            display: inline-block;
+        }
+        .nav-menu-wrap .main-nav .full-wrapper .inner-nav.desktop-nav ul li a {
+            color: #333;
+            font-size: 14px;
+            line-height: 1;
+        }
+        .nav-menu-wrap .main-nav .full-wrapper .inner-nav.desktop-nav ul li:hover a {
+            color: #999;
+        }
+        .page-section.nopadding {padding: 0;}
+
+        .page-section .container .post-prev-title a {
+
+        }
+        .special-section-title {
+            font-size: 23px;
+        }
+        .page-section .container .post-prev-title a h2 {
+            color: #545454;
+            font-size: 21px;
+            font-family: 'Capita', serif;
+            line-height: 1.4;
+            margin-bottom: 0px;
+        }
+        .page-section .container .post-prev-title a h2 b {
+            font-weight: 700;
+        }
+        .post-prev-text {
+            font-size: 15px;
+        }
+        
+        .article-list-item-wrap h2.blog-item-title {
+            width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin: 0 0 .2em 0;
+            font-size:20px;
+        }
+        .article-list-item-wrap .post-prev-text.subtitle {
+            height: 55px;
+            overflow: hidden;
+        }
+        .page-section .container .post-prev-text.subtitle {
+            margin-bottom: 20px;
+        }
+        .article-info .article-category,
+        .article-info .article-excertpt {
+            font-size: 14px; 
+        }
+        .post-prev-text.subtitle.excerpt, .article-info .article-excertpt{letter-spacing:0.2em;}
+        
+        
+        .post-prev-tag.article-info .article-category {
+            /*color: #B0B0B0;*/
+            margin-bottom: 8px;
+            display: inline-block;
+            line-height: 1;
+            letter-spacing: 0.1em;
+        }
+        .article-info .article-category {
+            color: #E3A222;
+        }
+
+        .article-info .article-excertpt,
+        .article-info .article-publish-date,
+        .article-content,
+        .article-title,
+        .override-section-title  {
+            color: #545454;
+        }
+        
+        .article-publish-date{font-size:12px;}
+        .post-content, .post-content p.content {padding: 0;}
+        .text .post-content {
+            padding: 20px 0;
+        }
+        .article-content * {
+            max-width: 100%;
+        }
+				.post-content a {
+					color: #E3A222;
+				}
+        .article-content hr, .article-content img {
+            width: 100%;
+        }
+
+        .article-info .article-title {
+            margin: 5px 0;
+        }
+				
+				.row.article-footer-info {
+					margin: auto 0;
+				}
+				
+				.footer-text-container .footer-decoration-top {
+					height: 80px;
+			    width: 100%;
+			    background-position: center;
+			    background-repeat: no-repeat;
+			    background-size: auto 100%;
+			    margin-bottom: 20px;
+				}
+				.footer-text-container .article-publisher-desc {
+					text-align: center;
+    			padding: 0 30px;
+				}
+				.footer-text-container .footer-decoration-end {
+			    height: 15px;
+			    background-repeat: no-repeat;
+			    background-size: auto 100%;
+			    background-position: center;
+			    position: relative;
+			    margin-top: 40px;
+				}
+				.footer-text-container .footer-decoration-end .footer-decoration-end-button {
+				  position: absolute;
+			    left: 0;
+			    right: 0;
+			    top: -12px;
+			    margin: auto;
+			    font-size: 15px !important;
+			    background: #a61753;
+			    width: auto;
+			    display: block;
+			    max-width: none !important;
+			    width: 280px;
+				}
+				
+        .other-related-post-wrap a {
+            font-size: inherit;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /*
+        footer#page-footer {	}
+        footer#page-footer .copyright {
+            padding: 100px 30px;
+            background-color: #F6F6F7;
+        }*/
+        .ft-section{padding:80px 0;}
+
+        .page-preloader {
+            z-index: 99999;
+            color: #545454;
+            background-color: #fafafa;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 1500ms ease 400ms;
+        }
+        .page-preloader .animation-wrap {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 360px;
+            min-height: 300px;
+            margin: -100px 0 0 -180px;
+            text-align: center;
+            transition: all 700ms ease;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .page-preloader>.animation-wrap>.loading-text, .page-preloader>.animation-wrap>.title-text {
+            text-align: center;
+            font-size: 19px;
+            width: 100%;
+            position: absolute;
+            line-height: 1.2;
+        }
+        .page-preloader>.animation-wrap>.title-text  {
+            background: transparent url("http://static.tumblr.com/r1iexbw/eryo3prqd/logo_header.svg") center center no-repeat;
+            /* background-size: auto 78px; */
+            text-indent: -999999px;
+            height: 78px;
+        }
+        .page-preloader > .animation-wrap > .loading-text {
+            font-size: 12px;
+            margin-top: 12px;
+            text-transform: uppercase;
+            opacity: .85;
+            top: 65%;
+        }
+
+        .css-preloader-01 .css-animation {
+
+            height: 30px;
+            width: 30px;
+            -webkit-animation: rotation .6s infinite linear;
+            animation: rotation .6s infinite linear;
+            border-left: 4px solid rgba(255,255,255,.1);
+            border-right: 4px solid rgba(255,255,255,.1);
+            border-bottom: 4px solid rgba(255,255,255,.1);
+            border-top: 4px solid rgba(255,255,255,.8);
+            padding: 0;
+            transition: all 700ms ease;
+            opacity: 1;
+            visibility: visible;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-radius: 50px;
+            bottom: 0;
+        }
+
+        .css-preloader-01 .css-animation {
+            border-top-color: rgba(217,94,64,.8);
+            border-left-color: rgba(217,94,64,.1);
+            border-right-color: rgba(217,94,64,.1);
+            border-bottom-color: rgba(217,94,64,.1);
+        }
+
+        .tags-wrap .article-tag a {
+            text-decoration: none;
+            color: #999999;
+        }
+				
+				.featured_story_slider .features-item {
+						min-height: 285px;
+						background-position: center;
+						background-size: cover;
+						background-repeat: no-repeat;
+				}
+				.featured_story_slider .features-item a {
+					height: 100%; 
+					display:block;
+				}
+				
+				
+				.listing-post-prev-img-container {}
+				.listing-post-prev-img-container a {
+					width: 100%;
+					height: 100%;
+					display: block;
+				}
+				.listing-post-prev-img-container a .listing-post-prev-img {
+					width: 100%;
+					height: 100%;
+					display: block;
+					background-position: center;
+					background-size: cover;
+					background-repeat: no-repeat;
+				}
+				.listing-post-prev-img-container a .listing-post-prev-img::after {
+					padding-top: 76.1%;
+			    display: block;
+			    content: '';
+				}
+		
+		
+			#habit-of-the-day-img {width: 100%; background-size: cover; background-repeat: no-repeat; background-position: center;}
+			#habit-of-the-day-img::after {
+				padding-top: 52.2%;
+		    display: block;
+		    content: '';
+			}
+		/*.mobile-ad > *, .desktop-ad > * {display: none;}*/
+        /* Override */
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			/* Jquery visible */
+			!function(t){var i=t(window);t.fn.visible=function(t,e,o){if(!(this.length<1)){var r=this.length>1?this.eq(0):this,n=r.get(0),f=i.width(),h=i.height(),o=o?o:"both",l=e===!0?n.offsetWidth*n.offsetHeight:!0;if("function"==typeof n.getBoundingClientRect){var g=n.getBoundingClientRect(),u=g.top>=0&&g.top<h,s=g.bottom>0&&g.bottom<=h,c=g.left>=0&&g.left<f,a=g.right>0&&g.right<=f,v=t?u||s:u&&s,b=t?c||a:c&&a;if("both"===o)return l&&v&&b;if("vertical"===o)return l&&v;if("horizontal"===o)return l&&b}else{var d=i.scrollTop(),p=d+h,w=i.scrollLeft(),m=w+f,y=r.offset(),z=y.top,B=z+r.height(),C=y.left,R=C+r.width(),j=t===!0?B:z,q=t===!0?z:B,H=t===!0?R:C,L=t===!0?C:R;if("both"===o)return!!l&&p>=q&&j>=d&&m>=L&&H>=w;if("vertical"===o)return!!l&&p>=q&&j>=d;if("horizontal"===o)return!!l&&m>=L&&H>=w}}}}(jQuery);
+		</script>
+		<script type="text/javascript">
+			String.prototype.replaceAll = function(search, replacement) {
+				var target = this;
+				return target.replace(new RegExp(search, 'g'), replacement);
+			};
+			window.mobilecheck = function() {
+				var check = false;
+				(function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+				return check;
+			}
+			function template_related_post_list_item(post_id, post_tag, post_thumbnail, post_permalink, post_title, post_excerpt, post_outlink) {
+				var return_html = '';
+				return_html += '<div class="row good-habit mb-xs-50 mb-sm-50 mb-md-50 mb-10">';
+					return_html += '<div class="col-md-5 post-prev-img listing-post-prev-img-container" ><a href="'+post_permalink+'"'+(post_outlink ?' target="_blank"' :'')+'><div class="listing-post-prev-img" style="background-image: url('+post_thumbnail+')"></div></a></div>';
+					return_html += '<div class="col-md-6 col-md-offset-0"><div class="article-info">';
+
+					return_html += '<span class="article-category"><a href="/tagged/'+post_tag.toLowerCase().trim().replace(' ', '+')+'">'+post_tag+'</a></span>';
+					return_html += '<h2 class="article-title blog-item-title font-alt"><a href="'+post_permalink+'"'+(post_outlink ?' target="_blank"' :'')+'>'+ post_title +'</a></h2>';
+					if(post_excerpt!=='') {
+							return_html += '<span class=article-excertpt">'+post_excerpt+'</span>';
+					}
+					return_html += '</div></div>';
+				return_html += '</div>';
+				return return_html;
+			}
+		
+			function template_article_list_item(post_id, post_tag, post_thumbnail, post_permalink, post_title, post_excerpt, post_outlink) {
+				var tmp_html = '';
+				tmp_html += '<div class="col-sm-6 col-md-4 col-lg-4 mb-40 mb-xs-40 article-list-item-wrap" data-post-id="'+post_id+'">';
+					tmp_html += '<div class="post-prev-tag article-info"><span class="article-category">';
+						tmp_html += '<a href="/tagged/'+post_tag.toLowerCase().trim().replace(' ', '+')+'">'+ post_tag +'</a>';
+					tmp_html += '</span></div>';
+					tmp_html += '<div class="post-prev-img listing-post-prev-img-container"><a href="'+post_permalink+'"'+(post_outlink ?' target="_blank"' :'')+'>';
+						tmp_html += '<div class="listing-post-prev-img" style="background-image: url('+post_thumbnail+');" ></div>';
+					tmp_html += '</a></div>';
+					tmp_html += '<div class="post-prev-title font-alt"><h2 class="blog-item-title font-alt">';
+						tmp_html += '<a href="'+post_permalink+'"'+(post_outlink ?' target="_blank"' :'')+'>'+post_title+'</a>';
+					tmp_html += '</h2></div>';
+					tmp_html += '<div class="post-prev-text subtitle excerpt">'+post_excerpt+'</div>';
+				tmp_html += '</div>';
+				return tmp_html;
+			}
+			
+			function tumblr_get_post(tagged, offset, size, callback_func) {
+				//console.log(tagged + " | " + offset + " | " + size + " | " + callback_func);
+				var tmp_total_available_post = '';
+				switch(callback_func) {
+					case 'listing':
+						tmp_total_available_post = window.total_available_post;
+						break;
+					case 'related_post':
+						tmp_total_available_post = window.total_available_related_post;
+						break;
+					default:
+						break;
+				}
+				//console.log("tmp_total_available_post : " + tmp_total_available_post);
+				if(tmp_total_available_post!=='' && offset >= tmp_total_available_post) {
+					//console.log("reach available post");
+					return false;
+				}
+					
+				$.ajax({
+					type: "GET",
+					url : "https://api.tumblr.com/v2/blog/"+ window.location.host+"/posts",
+					data: {
+							'api_key' : "{text:TumblrAPIKey}",
+							'tag' : tagged,
+							'offset' : offset,
+							'limit' : size,
+					},
+					dataType: "jsonp",
+					success: function(data) {
+						console.log(data);
+						if(data.meta.status==200) {
+							if(typeof data.response.posts!=='undefined' && data.response.posts.length > 0) {
+								var post = data.response.posts;
+								for(i=0; i<post.length; i++) {
+									var content_body = post[i].body || post[i].caption;
+									content_body = content_body.replaceAll('<img', '<preimg');
+									var post_id = "";
+									var post_tag = "";
+									var post_thumbnail = "";
+									var post_title = "";
+									var post_excerpt = "";
+									var post_permalink = "";
+									var post_outlink = false;
+									var tmp_html = "";
+									
+									var article_setting = $('<div />').html(content_body);
+									post_id = post[i].id;
+									
+									if(callback_func=="listing" && get_current_tag()!=='featured story' && get_current_tag()!=='') {
+										post_tag = get_current_tag();
+									} else if(typeof post[i].tags!=='undefined') {
+										post_tag = (post[i].tags[0]!==undefined && post[i].tags[0].toLowerCase()=="featured story" && post[i].tags[1]!==undefined) ?post[i].tags[1] : post[i].tags[0] || '';
+									}
+									
+									/* if(article_setting.find('[data-name=article-cover-image-square]').length > 0) {
+										post_thumbnail = article_setting.find('[data-name=article-cover-image-square]').text() || article_setting.find('[data-name=article-cover-image-square] a').text()
+									} */
+									
+									//console.log(article_setting.html());
+									//console.log(article_setting.find('preimg:eq(0)').attr('src') || article_setting.find('[data-name=article-cover-image-square]').text() || article_setting.find('[data-name=article-cover-image-square] a').text());
+									
+									if(post[i].type==='photo' && post[i].photos[0].alt_sizes[0].url !== '' && post[i].photos[0].alt_sizes[0].url !== 'undefined' && post[i].photos[0].alt_sizes[0].url !== undefined && post[i].photos[0].alt_sizes[0].url !== null) {
+										post_thumbnail = post[i].photos[0].alt_sizes[0].url;
+									}
+									
+									if(post_thumbnail==='' && (article_setting.find('preimg').length > 0 || article_setting.find('[data-name=article-cover-image-square]').length > 0)) {
+										post_thumbnail = article_setting.find('preimg:eq(0)').attr('src') || article_setting.find('[data-name=article-cover-image-square]').text() || article_setting.find('[data-name=article-cover-image-square] a').text();
+									}
+									
+									post_title = post[i].title || article_setting.find('[data-name=article-title]').text() || '';
+									
+									//if(article_setting.find("p").length > 0) {
+										
+										for(k=0; k<=10; k++) {
+											if(article_setting.find("p:eq("+k+")").text()!=='') {
+												post_excerpt =  article_setting.find("p:eq("+k+")").text();
+												break;
+											}
+										}
+										
+										if(post_excerpt!=='') {
+											post_excerpt = post_excerpt.substring(0,35);
+										}
+									//}
+									//if(post_excerpt=='') {post_excerpt = article_setting.find('[data-name=article-excerpt]').text() || '';}
+									
+									if(article_setting.find('[data-name=article-outlink]').length > 0) {
+										post_permalink = article_setting.find('[data-name=article-outlink] a').text() || article_setting.find('[data-name=article-outlink]').text();
+										post_outlink = true;
+									} else {
+										post_permalink = post[i].short_url || post[i].post_url;
+									}
+									
+
+									switch (callback_func) {
+										case 'listing':
+											if(post_id!='' && post_thumbnail!='' && post_permalink!='') {
+												tmp_html = template_article_list_item(post_id, post_tag, post_thumbnail, post_permalink, post_title, post_excerpt, post_outlink);
+												
+												//Skip it if this post is added by the spreadsheets control panel
+												if(window.location.pathname=="/") {
+													if($('.article-list-item-wrap[data-post-id='+post_id+']').length == 0){
+														$('.article-list-item-container').append(tmp_html);
+													}
+												}else{
+													$('.article-list-item-container').append(tmp_html);
+												}
+											}
+											removeDuplicatePost();
+											break;
+										case 'related_post':
+											//console.log(post_id + " | " + post_thumbnail + " | " + post_permalink );
+											if(post_id!='' && post_thumbnail!='' && post_permalink!='') {
+												//console.log("related_post showing");
+												$('.other-related-post-wrap').show();
+												tmp_html = template_related_post_list_item(post_id, post_tag, post_thumbnail, post_permalink, post_title, post_excerpt, post_outlink);
+												//console.log(tmp_html);
+												$('.others-good-habits-wrap').append(tmp_html); 
+											}
+											break;
+										default: 
+											break;
+									}
+
+									
+									
+								}
+								
+							}
+							switch(callback_func) {
+								case 'listing':
+									window.total_available_post = data.response.total_posts;
+									window.listing_post_offset += window.listing_post_per_page;
+									window.allow_listing_load_more = true;
+									if(window.listing_post_offset >= window.total_available_post) {
+										$('#btn-load-more').remove();
+									}
+									break;
+								case 'related_post':
+									window.total_available_related_post = data.response.total_posts;
+									window.related_post_offset += window.related_post_per_page;
+									//console.log("offset : " + window.related_post_offset + " | available related_post: " + window.related_post_per_page);
+									window.allow_related_load_more = true;
+									if(window.related_post_offset >= window.total_available_related_post) {
+										$('#btn-load-more').remove();
+									}
+									break;
+								default:
+									break;
+							}
+
+
+
+						}
+					},
+					error: function() {}
+				}).always(function () {
+					//get specific posts in homepage
+					if(window.location.pathname=="/" && specific_page_firstLoad == true){
+						get_specific_posts();
+						specific_page_firstLoad = false;
+					}
+				});
+			}
+			
+			function removeDuplicatePost() {
+				if(window.location.pathname=="/") {
+						if($('.habit-of-the-day-wrap').length > 0 && $('.habit-of-the-day-wrap').data('post-id')!==undefined && $('.habit-of-the-day-wrap').data('post-id')!=='') {
+							var tmp_htod_id = $('.habit-of-the-day-wrap').data('post-id');
+							$('.article-list-item-wrap[data-post-id='+tmp_htod_id+']').remove();
+						}
+				}
+			}
+			
+			function get_current_tag() {
+				if(window.location.pathname == "/") {
+					return '';
+				}
+				return decodeURIComponent(window.location.pathname.replace('/tagged/','').replace('+', ' ').toLowerCase());
+			}
+			
+		</script>
+		
+		
+		{block:IndexPage}<script type="text/javascript">
+			$(document).ready(function() {
+				window.allow_listing_load_more = true;
+				tumblr_get_post(get_current_tag(), window.listing_post_offset, window.listing_post_per_page, 'listing');
+				
+				$(window).scroll(function() {
+					if($('#btn-load-more').visible(true) && window.allow_listing_load_more) {
+						window.allow_listing_load_more = false;
+						//console.log(window.listing_post_offset + " | " + window.listing_post_per_page);
+						tumblr_get_post(get_current_tag(), window.listing_post_offset, window.listing_post_per_page, 'listing');
+					}
+				});
+			});
+		</script>{/block:IndexPage}
+		{block:PermalinkPage}{block:Posts}<script type="text/javascript">
+			$(document).ready(function() {
+				window.allow_related_load_more = true;
+				if($('.main-article-info .article-category .article-category-item > a').text()!=='') {
+					tumblr_get_post($('.main-article-info .article-category .article-category-item > a').text(), window.related_post_offset, window.related_post_per_page, 'related_post');
+					$(window).scroll(function() {
+						//console.log(window.allow_related_load_more);
+						if($('#btn-load-more').visible(true) && window.allow_related_load_more) {
+							//console.log(2);
+							window.allow_related_load_more = false;
+							tumblr_get_post($('.main-article-info .article-category .article-category-item > a').text(), window.related_post_offset, window.related_post_per_page, 'related_post');
+						}
+					});
+				}
+				
+			});
+		</script>{/block:Posts}{/block:PermalinkPage}
+		
+    <script type="text/javascript">
+        /* Custom Function */
+        /* ------------------------------------------------------------
+            Google Spreadsheet Control Panel
+         ------------------------------------------------------------ */
+        var ssid = "1SosnfQJVrpHtJ2usn3PBnbQClU3kAlyp9GYxMJKmusQ";
+        var tab_no = "";
+        var tmp_url = 'https://spreadsheets.google.com/feeds/list/'+ssid+'/__sheetid__/public/values?alt=json-in-script&callback=?';
+        var monthly_theme_name = "";
+        var theme_name_ready = false;
+				var listing_post_per_page = {text:ListingPostPerPage};
+				var listing_post_offset = 0;
+				var total_available_post = '';
+				var related_post_per_page = {text:RelatedPostPerPage};
+				var related_post_offset = 0;
+				var total_available_related_post = '';
+
+        function replace_url(url, id) {
+            return url.replace("__sheetid__", id);
+        }
+				
+				function get_first_escape_tag(str) {
+					var return_tag = str.split(',')[0].trim();
+					if(return_tag.toLowerCase()=='featured story') {
+						return_tag = str.split(',')[1] || '';
+					}
+					return return_tag.trim().replace(' ', '+');
+				}
+
+        function get_random_num(arlen) {
+            var armax = arlen - 1;
+            var rand = Math.floor(Math.random() * armax);
+            return rand;
+        }
+
+        function isInt(n){
+            return Number(n) === n && n % 1 === 0;
+        }
+
+        function get_chinese_month(m) {
+            var return_v = false;
+            switch(m) {
+                case "01": case "1":
+                    return_v = "一";
+                    break;
+                case "02": case "2":
+                    return_v = "二";
+                    break;
+                case "03": case "3":
+                    return_v = "三";
+                    break;
+                case "04": case "4":
+                    return_v = "四";
+                    break;
+                case "05": case "5":
+                    return_v = "五";
+                    break;
+                case "06": case "6":
+                    return_v = "六";
+                    break;
+                case "07": case "7":
+                    return_v = "七";
+                    break;
+                case "08": case "8":
+                    return_v = "八";
+                    break;
+                case "09": case "9":
+                    return_v = "九";
+                    break;
+                case "10":
+                    return_v = "十";
+                    break;
+                case "11":
+                    return_v = "十一";
+                    break;
+                case "12":
+                    return_v = "十二";
+                    break;
+            }
+            return return_v;
+        }
+
+        function get_feed(furl, callback) {
+            jQuery.ajax({
+                url: furl,
+                dataType: 'jsonp',
+                success: function(data) {
+                    var dentry = data.feed.entry;
+                    switch(callback) {
+                        case "monthly_theme":
+                            get_monthly_theme_callback(dentry);
+                            break;
+                        case "article_footer":
+                            get_article_footer_callback(dentry);
+                            break;
+						case "get_specific_posts":
+							get_specific_posts_callback(dentry);
+                            break;
+                        default:
+                            return false;
+                    }
+                }
+            });
+        }
+
+        function get_monthly_theme() {
+            tab_no = 1;
+            var url = replace_url(tmp_url, tab_no);
+            var tmp_data = get_feed(url, "monthly_theme");
+        }
+
+        function get_monthly_theme_callback(fdata) {
+            //var theme_month = "201608"; //PS: Change this to current year
+            var theme_month = jQuery('.monthly-theme-wrapper').data('theme-month');
+            var monthly_theme_key = new Array();
+            var monthly_theme = new Array();
+            jQuery.each(fdata, function(i,v) {
+                if(
+                        typeof jQuery(this)[0].gsx$enable!='undefined' &&
+                        typeof jQuery(this)[0].gsx$enable.$t!='undefined' &&
+                        jQuery(this)[0].gsx$enable.$t=='Y' &&
+                        typeof jQuery(this)[0].gsx$themeslug!='undefined' &&
+                        typeof jQuery(this)[0].gsx$themeslug.$t!='undefined' &&
+                        jQuery(this)[0].gsx$themeslug.$t!='' &&
+                        typeof jQuery(this)[0].gsx$themetitle!='undefined' &&
+                        typeof jQuery(this)[0].gsx$themetitle.$t!='undefined' &&
+                        jQuery(this)[0].gsx$themetitle.$t!=''
+                ) {
+                    if(isInt(parseInt(jQuery(this)[0].gsx$themeslug.$t))) {
+                        monthly_theme_key.push(jQuery(this)[0].gsx$themeslug.$t);
+                        monthly_theme[jQuery(this)[0].gsx$themeslug.$t] = jQuery(this)[0].gsx$themetitle.$t;
+                    }
+                }
+            });
+            if(monthly_theme[theme_month]==undefined) {
+                if(jQuery('.monthly-theme-wrapper').data('theme-backmonth')!=undefined) {
+                    theme_month = Math.max.apply(Math, monthly_theme_key);
+                } else {
+                    jQuery('.monthly-theme-wrapper').remove();
+                    return false;
+                }
+            }
+            window.monthly_theme_name = monthly_theme[theme_month];
+            window.theme_name_ready = true;
+            jQuery('.monthly-title').text(monthly_theme[theme_month]);
+            jQuery('.mothly-theme-month').text(get_chinese_month(theme_month.toString().substring(4)));
+        }
+
+
+        function get_article_footer() {
+            tab_no = 2;
+            var url = replace_url(tmp_url, tab_no);
+            var tmp_data = get_feed(url, "article_footer");
+        }
+
+        function get_article_footer_callback(fdata) {
+            //var slug = "default";	// PS: Getting this from article
+            var slug = jQuery('.article-footer-info').data('slug');
+            var footer_templates = new Array();
+            jQuery.each(fdata, function(i, v) {
+                if(typeof jQuery(this)[0].gsx$enable!='undefined' &&
+                        typeof jQuery(this)[0].gsx$enable.$t!='undefined' &&
+                        jQuery(this)[0].gsx$enable.$t=="Y"
+                ) {
+                    if(
+                            typeof jQuery(this)[0].gsx$footeralias!='undefined' &&
+                            typeof jQuery(this)[0].gsx$footeralias.$t!='undefined' &&
+                            jQuery(this)[0].gsx$footeralias.$t==slug
+                    ) {
+                        var tmp_footer_text = '';
+                        if(
+                                typeof jQuery(this)[0].gsx$footertext!='undefined' &&
+                                typeof jQuery(this)[0].gsx$footertext.$t!='undefined' &&
+                                jQuery(this)[0].gsx$footertext.$t!=''
+                        ) {
+                            tmp_footer_text = (jQuery(this)[0].gsx$footertext.$t)
+                        }
+                        
+                        var tmp_footer_hd = '';
+                        if(
+                                typeof jQuery(this)[0].gsx$footerheaderdecoration!='undefined' &&
+                                typeof jQuery(this)[0].gsx$footerheaderdecoration.$t!='undefined' &&
+                                jQuery(this)[0].gsx$footerheaderdecoration.$t!=''
+                        ) {
+                            tmp_footer_hd = (jQuery(this)[0].gsx$footerheaderdecoration.$t)
+                        }
+                        
+                        var tmp_footer_ed = '';
+                        if(
+                                typeof jQuery(this)[0].gsx$footerenddecoration!='undefined' &&
+                                typeof jQuery(this)[0].gsx$footerenddecoration.$t!='undefined' &&
+                                jQuery(this)[0].gsx$footerenddecoration.$t!=''
+                        ) {
+                            tmp_footer_ed = (jQuery(this)[0].gsx$footerenddecoration.$t)
+                        }
+                        
+                        var tmp_footer_link = '';
+                        var tmp_footer_link_name = '立即登記';
+                        if(
+                                typeof jQuery(this)[0].gsx$footerlink!='undefined' &&
+                                typeof jQuery(this)[0].gsx$footerlink.$t!='undefined' &&
+                                jQuery(this)[0].gsx$footerlink.$t!='' &&
+                                typeof jQuery(this)[0].gsx$footerbuttonname!='undefined' &&
+                                typeof jQuery(this)[0].gsx$footerbuttonname.$t!='undefined'
+                        ) {
+                            tmp_footer_link = (jQuery(this)[0].gsx$footerlink.$t)
+                            if(jQuery(this)[0].gsx$footerbuttonname.$t!='')
+                            	tmp_footer_link_name = (jQuery(this)[0].gsx$footerbuttonname.$t)
+                        }
+                        
+                        footer_templates.push({
+                        	text:tmp_footer_text,
+                        	fd_top:tmp_footer_hd,
+                        	fd_end:tmp_footer_ed,
+                        	flink:tmp_footer_link,
+                        	flink_name:tmp_footer_link_name
+                        });
+                    }
+                }
+            });
+            if(footer_templates.length > 0) {
+                var arlen = footer_templates.length;
+                var return_num = get_random_num(arlen);
+                footer_templates = footer_templates[return_num];
+                if(footer_templates.text!='')
+                    jQuery('.article-footer-info .article-publisher-desc').html(footer_templates.text);
+                if(footer_templates.fd_top!='') {
+                		jQuery('.footer-text-container .footer-decoration-top').css('background-image', 'url(' + footer_templates.fd_top + ')' ); 
+                } else {
+                		jQuery('.footer-text-container .footer-decoration-top').remove(); 
+                }
+                if(footer_templates.fd_end!='' || footer_templates.flink!=='') {
+                	if(footer_templates.fd_end!='') {
+                		jQuery('.footer-text-container .footer-decoration-end').css('background-image', 'url(' + footer_templates.fd_end + ')' ); 
+                	}
+                	//jQuery('.article-footer-info .article-publisher-logo').html('<img src="'+footer_templates.logo+'" width="100%" />');
+                } else {
+                	jQuery('.footer-text-container .footer-decoration-end').remove(); 
+                }
+                    
+                if(footer_templates.flink!='') {
+                		jQuery('.footer-text-container a.footer-decoration-end-button').attr('href', footer_templates.flink); 
+                		jQuery('.footer-text-container a.footer-decoration-end-button').text(footer_templates.flink_name); 
+                } else 
+             				jQuery('.footer-text-container a.footer-decoration-end-button').remove(); 	   		
+             		
+            } else {
+                jQuery('.article-footer-info').remove();
+            }
+        }
+        /* ------------------------------------------------------------
+         Google Spreadsheet Control Panel
+         ------------------------------------------------------------ */
+        var hide_first_post = false;	// Hide the first post when "Habit of the day" Section is enabled
+        var htod_post = '';
+
+        function slide_template(imgPath, target_url, slideName) {
+            var tmp_html = "";
+            var currentPath = window.location.pathname;
+            if((currentPath==="/" && slideName.indexOf("HomePageSlide") >= 0) || (currentPath==="/tagged/Featured+Story" && slideName.indexOf("FeaturedStorySlide")>=0)) {
+
+                tmp_html += '<div><div class=" relative"><div class="row">';
+                tmp_html += '<div class="col-md-12 col-md-offset-0 nopadding align-center">';
+                if(target_url!=='')
+                	tmp_html += '<a href="' + target_url + '">';
+                tmp_html += '<img src="'+imgPath+'" width="100%" />';
+                if(target_url!=='')
+                	tmp_html += '</a>';
+                tmp_html += '</div>';
+                tmp_html += '</div></div></div>';
+
+            }
+            return tmp_html;
+        }
+
+        function get_first_tag(str) {
+            var tmp_first_tag = new Array;
+            str = str.replace(/,\s*$/, "");
+            tmp_first_tag = str.split(",");
+
+            return tmp_first_tag[0];
+        }
+		
+		/*Specific**/
+		var specific_posts_data;
+		var specific_posts_data_index = 0;
+		var specific_posts_insert_index = 2; 
+		var specific_page_firstLoad = true;
+		function get_specific_posts() {
+            tab_no = 4;
+            var url = replace_url(tmp_url, tab_no);
+            var tmp_data = get_feed(url, "get_specific_posts");
+        }
+		function get_specific_posts_callback(data) {
+			specific_posts_data = data;
+			specific_posts_data_index = 0;
+			get_specific_posts_pop();
+        }
+		function get_specific_posts_pop(){
+			if(specific_posts_data != null &&specific_posts_data_index <= (specific_posts_data.length-1) ){
+				var postId = specific_posts_data[specific_posts_data_index].gsx$postid.$t;
+				//console.log("postId: " + postId);
+				specific_posts_data_index++;
+				tumblr_get_post_byId(postId, "listing");
+			}
+		}
+		
+		$(document).ready(function(){
+			if(window.location.pathname=="/") {
+				//get_specific_posts();
+			}
+		});
+		
+		
+		function tumblr_get_post_byId(postId, callback_func) {
+			//remove the duplicate posts
+			$('.article-list-item-wrap[data-post-id='+postId+']').remove();
+			
+			$.ajax({
+				type: "GET",
+				url : "https://api.tumblr.com/v2/blog/"+ window.location.host+"/posts",
+				data: {
+						'api_key' : "{text:TumblrAPIKey}",
+						'id' : postId,
+				},
+				dataType: "jsonp",
+				success: function(data) {
+					//console.log(data);
+					if(data.meta.status==200) {
+						if(typeof data.response.posts!=='undefined' && data.response.posts.length > 0) {
+							var post = data.response.posts;
+							for(i=0; i<post.length; i++) {
+								var content_body = post[i].body || post[i].caption;
+								content_body = content_body.replaceAll('<img', '<preimg');
+								var post_id = "";
+								var post_tag = "";
+								var post_thumbnail = "";
+								var post_title = "";
+								var post_excerpt = "";
+								var post_permalink = "";
+								var post_outlink = false;
+								var tmp_html = "";
+								
+								var article_setting = $('<div />').html(content_body);
+								post_id = post[i].id;
+								
+								if(callback_func=="listing" && get_current_tag()!=='featured story' && get_current_tag()!=='') {
+									post_tag = get_current_tag();
+								} else if(typeof post[i].tags!=='undefined') {
+									post_tag = (post[i].tags[0]!==undefined && post[i].tags[0].toLowerCase()=="featured story" && post[i].tags[1]!==undefined) ?post[i].tags[1] : post[i].tags[0] || '';
+								}
+								
+								if(article_setting.find('[data-name=article-cover-image-square]').length > 0) {
+									post_thumbnail = article_setting.find('[data-name=article-cover-image-square]').text() || article_setting.find('[data-name=article-cover-image-square] a').text()
+								}
+								
+								post_title = post[i].title || article_setting.find('[data-name=article-title]').text() || '';
+								post_excerpt = article_setting.find('[data-name=article-excerpt]').text() || '';
+								if(article_setting.find('[data-name=article-outlink]').length > 0) {
+									post_permalink = article_setting.find('[data-name=article-outlink] a').text() || article_setting.find('[data-name=article-outlink]').text();
+									post_outlink = true;
+								} else {
+									post_permalink = post[i].short_url || post[i].post_url;
+								}
+								
+
+								switch (callback_func) {
+									case 'listing':
+										if(post_id!='' && post_thumbnail!='' && post_permalink!='') {
+											tmp_html = template_article_list_item(post_id, post_tag, post_thumbnail, post_permalink, post_title, post_excerpt, post_outlink);
+											
+											if($(".article-list-item-wrap").length > 0 && $(".article-list-item-wrap").length >= 3){
+												var append_index = specific_posts_insert_index;
+												//console.log("append index");
+												$(".article-list-item-wrap:eq(" + append_index + ")").after(tmp_html);
+												specific_posts_insert_index++;
+											}else{
+												$('.article-list-item-container').append(tmp_html);
+											}
+										}
+										removeDuplicatePost();
+										break;
+									case 'related_post':
+										//console.log(post_id + " | " + post_thumbnail + " | " + post_permalink );
+										if(post_id!='' && post_thumbnail!='' && post_permalink!='') {
+											//console.log("related_post showing");
+											$('.other-related-post-wrap').show();
+											tmp_html = template_related_post_list_item(post_id, post_tag, post_thumbnail, post_permalink, post_title, post_excerpt, post_outlink);
+											//console.log(tmp_html);
+											$('.others-good-habits-wrap').append(tmp_html); 
+										}
+										break;
+									default: 
+										break;
+								}
+
+								
+								
+							}
+							
+						}
+					}
+				},
+				error: function() {}
+			}).always(function () {
+				get_specific_posts_pop();
+				//console.log("finish");
+			});
+		}
+
+		
+        /* Custom Function */
+
+        $(document).ready(function() {
+            $('.page-preloader').css({'display':'none'});
+        });
+    </script>
+</head>
+<body data-urlencoded-name="{URLEncodedName}" class="{select:Layout}{block:IndexPage} index-page{/block:IndexPage}{block:PermalinkPage} permalink{/block:PermalinkPage}{block:LikesPage} likes-page{/block:LikesPage}{block:FollowingPage} following-page{/block:FollowingPage}{block:SearchPage} search-page{block:NoSearchResults} no-results{/block:NoSearchResults}{block:NoLikes} no-likes{/block:NoLikes}{block:NoFollowing} no-following{/block:NoFollowing}{/block:SearchPage}{block:HideHeaderImage} no-header-image{/block:HideHeaderImage}{block:NoStretchHeaderImage} contain-header-image{/block:NoStretchHeaderImage}{block:IfRelatedPosts} display-related-posts{/block:IfRelatedPosts}">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="page-preloader css-preloader-01 " style="">
+    <div class="animation-wrap" style="">
+        <div class="title-text">BetterMe Magazine</div>
+        <div class="loading-text">Loading</div>
+        <div class="css-animation"></div>
+    </div>
+</div>
+<div class="app-nag">
+    <div class="app-nag-header clearfix">
+        <div class="app-nag-icon">
+            <div class="app-nag-icon-ios">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 1024 1024" enable-background="new 0 0 1024 1024" xml:space="preserve">
+                            <path fill="#36465D" d="M1024,771c0,139.2-113.8,253-253,253H253C113.8,1024,0,910.2,0,771V253C0,113.8,113.8,0,253,0h518 c139.2,0,253,113.8,253,253V771z"/>
+                            <path fill="none" stroke="#FFF100" stroke-width="4" stroke-miterlimit="10" d="M463.9,209.4"/>
+                            <path opacity="0.6" fill="#231F20" d="M628.1,681c8.2,0,17.1-1.2,25.8-3.3V530.3h111.6V401.8h-68.6V473H585.4v162.4 C586,676.3,609.1,681,628.1,681z M654.4,250.5h-68.6v94h68.6V250.5z M754.3,722.9c-12.7,7.1-28.9,12.4-44.3,14.5l11.4,33.8 c-20.5,27-71.4,45.5-118.1,46.3c-1.6,0-3.1,0-4.7,0c0,0,0,0,0,0c-32.5,0-59.5-5.7-81.9-15.3c26.2,40,72.7,72.6,150.5,72.6c0,0,0,0,0,0c1.6,0,3.1,0,4.7,0c46.6-0.8,97.6-19.4,118.1-46.3L754.3,722.9z"/>
+                            <path fill="none" stroke="#FFF100" stroke-width="4" stroke-miterlimit="10" d="M355,359.5"/>
+                            <path fill="#FFFFFF" d="M577.5,830.6c65.1,0,129.7-23.2,151-51.3l4.3-5.6l-40.4-119.7c-0.4-1.1-1.4-1.9-2.6-1.9h-7.6h-3.5l-79.1,0 c-1.2,0-2.3-0.8-2.6-2c-1.1-4-1.7-8.9-1.8-14.9V489c0-1.5,1.2-2.7,2.7-2.7h106.1c1.5,0,2.7-1.2,2.7-2.7V333.8c0-1.5-1.2-2.7-2.7-2.7 H598.4c-1.5,0-2.7-1.2-2.7-2.7V182.5c0-1.5-1.2-2.7-2.7-2.7h-82.6h-28.9h-73.8c-13.3,0-28.5,9.8-30.8,28 c-9.3,75.3-43.8,120.5-108.7,142.2l-7.2,2.4c-1.1,0.4-1.9,1.4-1.9,2.6v128.6c0,1.5,1.2,2.7,2.7,2.7h50.4h0h15.9c0,0,0,120,0,158.3 C328.1,771,415.7,830.6,577.5,830.6z M701.6,769.5c-20.3,19.5-62,34.1-102,34.7c-1.5,0-3,0-4.5,0h0 c-131.5,0-166.6-100.4-166.6-159.7V462.3c0-1.5-1.2-2.7-2.7-2.7h-63.6c-1.5,0-2.7-1.2-2.7-2.7v-83c0-1.1,0.7-2.1,1.7-2.5 c68-26.5,105.9-79,115.9-160.3c0.6-4.5,4.3-4.6,4.3-4.6h84.9c1.5,0,2.7,1.2,2.7,2.7v145.9c0,1.5,1.2,2.7,2.7,2.7h105.7 c1.5,0,2.7,1.2,2.7,2.7v96.4c0,1.5-1.2,2.7-2.7,2.7H571.3c-1.5,0-2.7,1.2-2.7,2.7l0,173.2c0.6,39,19.5,58.8,56.1,58.8 c14.7,0,31.6-3.4,47.1-9.3c1.4-0.6,3,0.2,3.5,1.6l27,80C702.6,767.7,702.4,768.8,701.6,769.5z"/>
+                            <path opacity="0.5" fill="#2D3F54" d="M328.1,528.9h73.8v-40.2c0-1.3-1.1-2.4-2.4-2.4h-71.4V528.9z"/>
+                        </svg>
+            </div>
+            <div class="app-nag-icon-android">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1024 1024" enable-background="new 0 0 1024 1024" xml:space="preserve">
+                            <path fill="none" stroke="#FFF100" stroke-width="4" stroke-miterlimit="10" d="M463.9,209.4"></path>
+                            <path opacity="0.5" fill="#231F20" d="M628.1,681c8.2,0,17.1-1.2,25.8-3.3V530.3h111.6V401.8h-68.6V473H585.4v162.4 C586,676.3,609.1,681,628.1,681z M654.4,250.5h-68.6v94h68.6V250.5z M754.3,722.9c-12.7,7.1-28.9,12.4-44.3,14.5l11.4,33.8 c-20.5,27-71.4,45.5-118.1,46.3c-1.6,0-3.1,0-4.7,0c0,0,0,0,0,0c-32.5,0-59.5-5.7-81.9-15.3c26.2,40,72.7,72.6,150.5,72.6c0,0,0,0,0,0c1.6,0,3.1,0,4.7,0c46.6-0.8,97.6-19.4,118.1-46.3L754.3,722.9z"></path>
+                            <path fill="none" stroke="#FFF100" stroke-width="4" stroke-miterlimit="10" d="M355,359.5"></path>
+                            <path fill="#36465D" d="M577.5,830.6c65.1,0,129.7-23.2,151-51.3l4.3-5.6l-40.4-119.7c-0.4-1.1-1.4-1.9-2.6-1.9h-7.6h-3.5l-79.1,0 c-1.2,0-2.3-0.8-2.6-2c-1.1-4-1.7-8.9-1.8-14.9V489c0-1.5,1.2-2.7,2.7-2.7h106.1c1.5,0,2.7-1.2,2.7-2.7V333.8c0-1.5-1.2-2.7-2.7-2.7 H598.4c-1.5,0-2.7-1.2-2.7-2.7V182.5c0-1.5-1.2-2.7-2.7-2.7h-82.6h-28.9h-73.8c-13.3,0-28.5,9.8-30.8,28 c-9.3,75.3-43.8,120.5-108.7,142.2l-7.2,2.4c-1.1,0.4-1.9,1.4-1.9,2.6v128.6c0,1.5,1.2,2.7,2.7,2.7h50.4h0h15.9c0,0,0,120,0,158.3 C328.1,771,415.7,830.6,577.5,830.6z M701.6,769.5c-20.3,19.5-62,34.1-102,34.7c-1.5,0-3,0-4.5,0h0 c-131.5,0-166.6-100.4-166.6-159.7V462.3c0-1.5-1.2-2.7-2.7-2.7h-63.6c-1.5,0-2.7-1.2-2.7-2.7v-83c0-1.1,0.7-2.1,1.7-2.5 c68-26.5,105.9-79,115.9-160.3c0.6-4.5,4.3-4.6,4.3-4.6h84.9c1.5,0,2.7,1.2,2.7,2.7v145.9c0,1.5,1.2,2.7,2.7,2.7h105.7 c1.5,0,2.7,1.2,2.7,2.7v96.4c0,1.5-1.2,2.7-2.7,2.7H571.3c-1.5,0-2.7,1.2-2.7,2.7l0,173.2c0.6,39,19.5,58.8,56.1,58.8 c14.7,0,31.6-3.4,47.1-9.3c1.4-0.6,3,0.2,3.5,1.6l27,80C702.6,767.7,702.4,768.8,701.6,769.5z"></path>
+                            <path opacity="0.5" fill="#2D3F54" d="M328.1,528.9h73.8v-40.2c0-1.3-1.1-2.4-2.4-2.4h-71.4V528.9z"></path>
+                        </svg>
+            </div>
+        </div>
+        <div class="app-nag-ratings">
+            <svg width="181px" height="30px" viewBox="0 0 181 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <path d="M15.8,25.2 L6.1,29.8 L7.5,19.2 L0.1,11.4 L10.6,9.5 L15.8,0 L20.9,9.5 L31.4,11.4 L24,19.2 L25.4,29.8 L15.8,25.2 Z" fill="#FFC00E"></path>
+                    <path d="M52.8,25.2 L43.1,29.8 L44.5,19.2 L37.1,11.4 L47.6,9.5 L52.8,0 L57.9,9.5 L68.4,11.4 L61,19.2 L62.4,29.8 L52.8,25.2 Z" fill="#FFC00E"></path>
+                    <path d="M89.8,25.2 L80.1,29.8 L81.5,19.2 L74.1,11.4 L84.6,9.5 L89.8,0 L94.9,9.5 L105.4,11.4 L98,19.2 L99.4,29.8 L89.8,25.2 Z" fill="#FFC00E"></path>
+                    <path d="M126.8,25.2 L117.1,29.8 L118.5,19.2 L111.1,11.4 L121.6,9.5 L126.8,0 L131.9,9.5 L142.4,11.4 L135,19.2 L136.4,29.8 L126.8,25.2 Z" fill="#FFC00E"></path>
+                    <path d="M163.8,25.2 L154.1,29.8 L155.5,19.2 L148.1,11.4 L158.6,9.5 L163.8,0 L168.9,9.5 L179.4,11.4 L172,19.2 L173.4,29.8 L163.8,25.2 Z" fill="#E7E7E7"></path>
+                    <path d="M163.3,25.1 L154.1,29.8 L155.5,19.2 L148.1,11.4 L158.6,9.5 L163.3,0.9 L163.3,25.1 Z" fill="#FFC00E"></path>
+                </g>
+            </svg>
+            <div class="app-nag-ratings-text app-nag-ratings-text-android">
+                {lang:Android rating numbers}
+            </div>
+            <div class="app-nag-ratings-text app-nag-ratings-text-ios">
+                {lang:iOS rating numbers}
+            </div>
+        </div>
+        <div class="app-nag-close-button">
+            <svg width="15px" height="15px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <path d="M12.510351,14.6860639 L0,27.1964147 L2.175713,29.3721278 L14.686064,16.8617771 L27.196415,29.3721278 L29.372128,27.1964147 L16.861777,14.6860639 L29.372128,2.1757132 L27.196415,0 L14.686064,12.5103507 L2.175713,0 L0,2.1757132 L12.510351,14.6860639 L12.510351,14.6860639 Z" fill="#D3D3D3"></path>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class="app-nag-body">
+        <h1 class="app-nag-callout">{lang:Engagement popover title}</h1>
+        <a class="app-nag-large-button app-nag-app-store-link button blue">{lang:Engagement popover button}</a>
+        <a class="app-nag-large-button app-nag-app-store-deny">{lang:Dismiss engagement popover}</a>
+    </div>
+</div>
+
+<section id="page">
+    <div class="logo-wrapper">
+        <a class="t-logo" href="https://www.tumblr.com/?referring_blog={URLEncodedName}&amp;referer=optica" target="_blank">
+            <svg class="svg-logo" width="29px" height="39px" viewBox="0 0 29 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <path class="large-shadow" d="M21.9956664,26.3 L21.9956664,19.0055544 L27.9954227,19.0055542 L27.9954227,13.0048828 L27.9954227,11.0108643 L23.522766,11.0108643 L23.5540067,11.6669807 L23.7388305,15.5486452 L17.6832886,15.4792482 L17.4,24 C17.5,26.3 18.8,26.5 19.8,26.5 C20.2,26.5 21.4956664,26.4 21.9956664,26.3 Z M18.7154541,4.00225829 L17.4,2.9 L17.4,8 L22.000122,7.34490957 L22.000122,4.00225829 L18.7154541,4.00225829 Z M24.3,29.6 L24.9,31.5 C23.8,32.9 21,34 18.4,34 L18.1,34 C16.3,34 14.8,33.7 13.6,33.2 C15,35.4 17.5999998,38.0021971 21.7999998,38.0021971 C21.7999996,38.6099361 22.0022113,38.0021971 22.0999998,38.0021971 C24.6999998,38.0021971 27.4,36.1 28.6,34.7 L26.7,28.8 C26,29.2 25.1,29.5 24.3,29.6 Z" id="Shape" fill="#000000"></path>
+                    <path class="inner" d="M18.5,33.6 L18.3,33.6 C11.1,33.6 9,28.2005493 9,25.0005493 L9,15 C8.58245849,15 4.99298096,15 5,15 L4.99298096,10.0285034 C4.99298096,9.92850342 5.1,9.9 5.2,9.9 C8.9,8.5 11.3,6.7 11.9,2.3 C11.8,2 12,2 12,2 L16.8,2 L17,2 L17,9.00006104 L23.012207,9.00006104 L23.012207,15 L17,15 L17,24.0839844 C17,26.1839844 17.8,27.3 19.8,27.3 C20.6,27.3 21.5,27.1 22.4,26.8 C22.5,26.8 22.6,26.8 22.6,26.9 L24.1,31.3 L24.1,31.7 C23,32.8 20.7,33.6 18.5,33.6 Z"></path>
+                    <path class="outer" d="M26.1,32.2 L26.3,31.9 L23.9,25.1 C23.9,25 23.8,25 23.8,25 L19.2,25 C19.1,25 19,25.1 19,25 C18.9,24.8 19,24.4 19,24.1 L19,17 L25,17 L25,7 C25,7 19,7 19,7 L19,0 L8,0 C7.3,0 6.4,0.8 6.3,1.8 C5.8,5.9 4.1,7.5 0.5,8.7 L0.1,8.8 C0,8.9 0,8.9 0,9 L0,17.0000006 C0,17.1000006 0.1,17 0.1,17 L4,17 L4,24.8 C4,31.8 8.46560059,36.0067139 17.3656006,36.0067139 C22.0656006,36.0067139 25,33.7 26.1,32.2 Z M18.5,33.6 L18.3,33.6 C11.1,33.6 9,28.2005493 9,25.0005493 L9,15 C8.58245849,15 4.99298096,15 5,15 L4.99298096,10.0285034 C4.99298096,9.92850342 5.1,9.9 5.2,9.9 C8.9,8.5 11.3,6.7 11.9,2.3 C11.8,2 12,2 12,2 L16.8,2 L17,2 L17,9.00006104 L23.012207,9.00006104 L23.012207,15 L17,15 L17,24.0839844 C17,26.1839844 17.8,27.3 19.8,27.3 C20.6,27.3 21.5,27.1 22.4,26.8 C22.5,26.8 22.6,26.8 22.6,26.9 L24.1,31.3 L24.1,31.7 C23,32.8 20.7,33.6 18.5,33.6 Z"></path>
+                    <path class="small-shadow" d="M4,19 L7,19 L7,17.0833333 C7,17 6.9,17 6.9,17 L4,17 L4,19 L4,19 Z" opacity="0.5" fill="#37465D"></path>
+                </g>
+            </svg>
+        </a>
+    </div>
+    <div class="header-wrapper
+                {block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}
+                {block:HideHeaderImage}no-image {/block:HideHeaderImage}
+                {block:HideAvatar}avatar-hidden{/block:HideAvatar}
+                {block:ShowAvatar}avatar-style-{AvatarShape}{/block:ShowAvatar}">
+
+        <header id="top" class="header-s1">
+            <div class="row">
+                <div class="blog-title  has-title hidden-xs hidden-sm">
+                    <a href="/">
+									      <span class="wrap none ">
+									        <h1 class="blog-name">{Title}</h1>
+									      </span>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- NAVIGATION MENU START -->
+            <div class="nav-menu-wrap">
+                <nav class="main-nav js-stick">
+                    <div class="full-wrapper relative clearfix">
+                        <!-- Logo ( * your text or image into link tag *) -->
+                        <div class="mobile-nav"><i class="fa fa-bars"></i></div>
+                        <div class="mobile-logo">
+                            <div class="blog-title  has-title">
+                                <a href="/">
+												      <span class="wrap none ">
+												        <h1 class="blog-name">{Title}</h1>
+												      </span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Main Menu -->
+                        <div class="inner-nav desktop-nav">
+                            <ul class="clearlist scroll-nav local-scroll">
+                                <li class="custom-item1" data-tag="主頁"><a href="/">主頁</a></li>
+                                <li class="custom-item2" data-tag="個人"><a href="/tagged/個人">個人</a></li>
+                                <li class="custom-item2" data-tag="featured story"><a class="font-alt-nav" href="/tagged/Featured+Story">Featured Story</a></li>
+                                <li class="custom-item3" data-tag="關係"><a href="/tagged/關係">關係</a></li>
+                                <li class="custom-item4" data-tag="健康"><a href="/tagged/健康">健康</a></li>
+                                <li class="custom-item5" data-tag="earth"><a class="font-alt-nav" href="/tagged/Earth">Earth</a></li>
+                                <li class="custom-item6" data-tag="生活態度"><a href="/tagged/生活態度">生活態度</a></li>
+                                <li class="custom-item7" data-tag="good bites"><a class="font-alt-nav" href="/tagged/Good+bites">Good bites</a></li>
+                                <!--<li class="custom-item8" data-tag="Power your love"><a class="font-alt-nav" href="http://betterme-magazine.tumblr.com/Power+your+love">中電「全城過電」</a></li>-->
+
+                            </ul>
+                        </div>
+												{block:IndexPage}
+												<script type="text/javascript">
+													if(!mobilecheck()) {
+														var current_tag_name = decodeURIComponent(window.location.pathname).replace(/\+/g,' ').replace('/tagged/', '').toLowerCase();
+														if(current_tag_name!=='/')
+															$('.desktop-nav ul li[data-tag="'+current_tag_name+'"]').addClass('current-tag');
+														else 
+															$('.desktop-nav ul li.custom-item1').addClass('current-tag');
+													}
+												</script>
+												{/block:IndexPage}
+												{block:PermalinkPage}
+												<script type="text/javascript">
+													if(!mobilecheck()) {
+														var current_tag_name = get_first_tag("{block:Posts}{block:Tags}{Tag},{/block:Tags}{/block:Posts}").replace(/\+/g,' ').toLowerCase();
+														
+														$('.desktop-nav ul li[data-tag="'+current_tag_name+'"]').addClass('current-tag');
+													}
+												
+												</script>
+												{/block:PermalinkPage}
+                    </div>
+                </nav>
+            </div>
+            <!-- End Navigation panel -->
+        </header>
+    </div>
+    {block:SearchPage}
+    {block:NoSearchResults}
+    <div class="search-no-results content">
+        {lang:Sorry no search results found}.
+    </div>
+    {/block:NoSearchResults}
+    {/block:SearchPage}
+    {block:LikesPage}
+    {block:NoLikes}
+    <div class="likes-no-likes content"></div>
+    {/block:NoLikes}
+    {/block:LikesPage}
+    {block:FollowingPage}
+    {block:NoFollowing}
+    <div class="following-no-following content"></div>
+    {/block:NoFollowing}
+    {/block:FollowingPage}
+    {block:IndexPage}
+    <script type="text/javascript">
+        if(window.location.pathname==="/tagged/Featured+Story") {
+            var tmp_html = "";
+            var current_year = new Date().getFullYear();
+            var current_month = new Date().getMonth() + 1;
+            if(current_month < 10) {
+                current_month = '0' + current_month;
+            }
+            tmp_html += '<section class="page-section pb-0 pt-50 monthly-theme-wrapper" data-theme-backmonth="true" data-theme-month="'+current_year+current_month+'"><div class="container"><div class="row">';
+            tmp_html += '<div class="col-md-12 col-md-offset-0 align-center">';
+            tmp_html += '<h1 class="monthly-title"></h1>';
+            //tmp_html += '<p class="monthly-desc-wrap">FEATURED STORY / <span class="mothly-theme-month"></span>月主題</p>';
+            tmp_html += '<p class="monthly-desc-wrap" style="padding-right:15px;">FEATURED STORY</p>';
+            tmp_html += '</div>';
+            tmp_html += '</div></div></section>';
+            document.write(tmp_html);
+
+            get_monthly_theme();
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        var slides = "";
+    </script>
+    {block:IfEnableHomePageSlide1}
+    <script type="text/javascript">
+        slides += slide_template("{image:HomePageSlide1}", "{text:HomePageSlide1URL}", "HomePageSlide1");
+    </script>
+    {/block:IfEnableHomePageSlide1}
+    {block:IfEnableHomePageSlide2}
+    <script type="text/javascript">
+        slides += slide_template("{image:HomePageSlide2}", "{text:HomePageSlide2URL}", "HomePageSlide2");
+    </script>
+    {/block:IfEnableHomePageSlide2}
+    {block:IfEnableHomePageSlide3}
+    <script type="text/javascript">
+        slides += slide_template("{image:HomePageSlide3}", "{text:HomePageSlide3URL}", "HomePageSlide3");
+    </script>
+    {/block:IfEnableHomePageSlide3}
+    {block:IfEnableHomePageSlide4}
+    <script type="text/javascript">
+        slides += slide_template("{image:HomePageSlide4}", "{text:HomePageSlide4URL}", "HomePageSlide4");
+    </script>
+    {/block:IfEnableHomePageSlide4}
+    {block:IfEnableHomePageSlide5}
+    <script type="text/javascript">
+        slides += slide_template("{image:HomePageSlide5}", "{text:HomePageSlide5URL}", "HomePageSlide5");
+    </script>
+    {/block:IfEnableHomePageSlide5}
+
+
+    {block:IfEnableFeaturedStorySlide1}
+    <script type="text/javascript">
+        slides += slide_template("{image:FeaturedStorySlide1}", "{text:FeaturedStorySlide1URL}", "FeaturedStorySlide1");
+    </script>
+    {/block:IfEnableFeaturedStorySlide1}
+    {block:IfEnableFeaturedStorySlide2}
+    <script type="text/javascript">
+        slides += slide_template("{image:FeaturedStorySlide2}", "{text:FeaturedStorySlide2URL}", "FeaturedStorySlide2");
+    </script>
+    {/block:IfEnableFeaturedStorySlide2}
+    {block:IfEnableFeaturedStorySlide3}
+    <script type="text/javascript">
+        slides += slide_template("{image:FeaturedStorySlide3}", "{text:FeaturedStorySlide3URL}", "FeaturedStorySlide3");
+    </script>
+    {/block:IfEnableFeaturedStorySlide3}
+    {block:IfEnableFeaturedStorySlide4}
+    <script type="text/javascript">
+        slides += slide_template("{image:FeaturedStorySlide4}", "{text:FeaturedStorySlide4URL}", "FeaturedStorySlide4");
+    </script>
+    {/block:IfEnableFeaturedStorySlide4}
+    {block:IfEnableFeaturedStorySlide5}
+    <script type="text/javascript">
+        slides += slide_template("{image:FeaturedStorySlide5}", "{text:FeaturedStorySlide5URL}", "FeaturedStorySlide5");
+    </script>
+    {/block:IfEnableFeaturedStorySlide5}
+
+    <script type="text/javascript">
+		
+        if(slides!=="") {
+						var extra_class = (window.location.pathname.toLowerCase()=="/tagged/featured+story") ?"featured_story_slider" :"";
+						var slider_type = (window.location.pathname.toLowerCase()=="/tagged/featured+story") ?"item-carousel" :"work-full-slider";
+            var ele = '<section class="page-section nopadding slider-wrapper mt-50"><div class="container"><div class="work-full-slider owl-carousel owl-theme">';
+            ele += slides;
+            ele += '</div></div></section>';
+            document.write(ele);
+        }
+				
+				// Carousel on Feature Story page, Backup mode
+				if(false && window.location.pathname.toLowerCase()=="/tagged/featured+story") {
+					var slides = "";
+					var ele = "";
+					slides+='<a href="http://betterme-magazine.tumblr.com/post/144192591065/"><div class="features-item" style="background-image:url(https://67.media.tumblr.com/41b27e1ff38a7c66e84f2006a9fc6f75/tumblr_inline_o70g2nc0y31sbgoqr_540.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>用Wi-Fi連接網絡</span></div><div class="features-descr"> 吳業坤 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192444015/"><div class="features-item" style="background-image:url(https://66.media.tumblr.com/cfec5c3b749b51889bad11bb394398c7/tumblr_inline_o70gc1GAO11sbgoqr_540.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>避免耗用備用電源</span></div><div class="features-descr"> 熊仔頭 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192466430/"><div class="features-item" style="background-image:url(https://67.media.tumblr.com/db3e49a66229d0dc452aced06887d96a/tumblr_inline_o70gc7mJkb1sbgoqr_540.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>減少使用風筒</span></div><div class="features-descr"> Miss Sue </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192527965/"><div class="features-item" style="background-image:url(http://67.media.tumblr.com/14c5d81f6a283234eb68524174f331f8/tumblr_inline_o70gm3568C1u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>善用抽濕機降溫</span></div><div class="features-descr"> 杜小喬 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192155110/"><div class="features-item" style="background-image:url(http://66.media.tumblr.com/87491e04c5051d2b803b12f93ec98785/tumblr_inline_o70gqb4Kdb1u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>定期檢查雪櫃門縫</span></div><div class="features-descr"> 蘇麗珊 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144191266510/"><div class="features-item" style="background-image:url(http://65.media.tumblr.com/34930e19b4b0bc274f18615f7128ba0e/tumblr_inline_o70hgd3pso1u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>冷氣風扇同時使用</span></div><div class="features-descr"> 項明生 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192547850/"><div class="features-item" style="background-image:url(http://65.media.tumblr.com/b9c10e95eb7ab0b68ae58294d680aa51/tumblr_inline_o70guz2RH11u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>善用剩餘冷氣</span></div><div class="features-descr"> Ding Ding </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192571155/"><div class="features-item" style="background-image:url(http://65.media.tumblr.com/afb2140dde5208660db59d7a4cbda252/tumblr_inline_o70gwiZS5t1u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>選用合適洗衣程序</span></div><div class="features-descr"> 林奕匡 </div></div></a>';
+					
+					ele = '<section class="page-section nopadding featured_story_slider slider-wrapper mt-50"><div class="container"><div class="item-carousel owl-carousel owl-theme">';
+					ele += slides;
+					ele += '</div></div></section>';
+					document.write(ele);
+				}
+    </script>
+    {/block:IndexPage}
+    <!-- Change 2 -->
+
+
+    {block:IndexPage}
+    <section class="page-section pb-50 pt-50 habit-of-the-day-wrap">
+        <div class="container">
+            <!-- Post Setting -->
+            <div class="hotd-article-setting-wrapper" style="display: none;"></div>
+            <!-- Post Setting -->
+
+            <div class="row mt-30 mb-30">
+                <div class="col-xs-2 col-sm-4 col-md-4"><hr class="full-width" /></div>
+                <div class="col-xs-8 col-sm-4 col-md-4 align-center nopadding special-section-title font-alt">HABIT OF THE DAY</div>
+                <div class="col-xs-2 col-sm-4 col-md-4"><hr class="full-width" /></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-7 col-md-6 post-prev-img"><a href=""></a></div>
+                <div class="col-sm-5 col-md-6">
+                    <div class="hotd post-prev-title mt-40 mt-md-0"><h2 class="blog-item-title font-alt"><a href=""></a></h2></div>
+
+                    <div class="hotd subtitle excerpt"></div>
+										<div class="hotd post-prev-more mt-20">
+                        <a href="" class="btn btn-mod btn-gray btn-round">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="">
+                    <hr class="full-width" />
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            if(window.location.pathname!="/") {
+                $('.habit-of-the-day-wrap').remove();
+            } else {
+                var force_tag = "habit of the day";
+                $.ajax({
+	                type: "GET",
+	                url : "https://api.tumblr.com/v2/blog/"+ window.location.host+"/posts",
+	                data: {
+	                    'api_key' : "{text:TumblrAPIKey}",
+	                    'tag' : force_tag,
+	                    'limit' : 1,
+	                },
+	                dataType: "jsonp",
+	                success: function(data) {
+	                	if(data.meta.status==200) {
+	                		if(typeof data.response.posts!=='undefined' && data.response.posts.length > 0) {
+
+	                			if(
+	                			(data.response.posts[0].type!==undefined && data.response.posts[0].type=='photo' && data.response.posts[0].caption!==undefined && data.response.posts[0].caption!='') ||
+	                			(data.response.posts[0].type!==undefined && data.response.posts[0].type=='text' && data.response.posts[0].body!==undefined && data.response.posts[0].body!='')
+	                			) {
+
+	                				var daily_img = '';
+	                				var daily_tmp_title = '';
+	                				if((data.response.posts[0].type=='photo')) {
+
+	                					$('.hotd-article-setting-wrapper').append(data.response.posts[0].caption);
+	
+							                daily_img = daily_img = data.response.posts[0].photos[0].alt_sizes[0].url || data.response.posts[0].image_permalink || '';
+							                
+							                daily_tmp_title = 
+							                	$('.habit-of-the-day-wrap .hotd-article-setting-wrapper p:eq(0)').text().substr(0,10) ||
+							                	$('.habit-of-the-day-wrap .hotd-article-setting-wrapper > .article-setting:eq(0) > [data-name="article-title"]').text() || '';
+							            } else if(data.response.posts[0].type=='text') {
+							            	$('.hotd-article-setting-wrapper').append(data.response.posts[0].body);
+							            		daily_img =  
+							            		$('.habit-of-the-day-wrap .hotd-article-setting-wrapper img:eq(0)').attr('src') || 
+							            		$('.habit-of-the-day-wrap .hotd-article-setting-wrapper > .article-setting:eq(0) > [data-name="article-cover-image-rectangle"] a').text() || 
+							            		$('.habit-of-the-day-wrap .hotd-article-setting-wrapper > .article-setting:eq(0) > [data-name="article-cover-image-rectangle"]').text() || 
+							            		'';
+
+							            		daily_tmp_title = data.response.posts[0].title || '';
+							            }
+							            
+							            var daily_tmp_excerpt = "";
+							            for(l=0; l<=10; l++) {
+							            	if($('.habit-of-the-day-wrap .hotd-article-setting-wrapper p:eq('+l+')').text()!=='') {
+							            		daily_tmp_excerpt = $('.habit-of-the-day-wrap .hotd-article-setting-wrapper p:eq('+l+')').text();
+								            	daily_tmp_excerpt = daily_tmp_excerpt.substr(0,30);
+							            	}
+							            }
+							            
+							            if(daily_tmp_excerpt=="") {
+							            	daily_tmp_excerpt = 
+						                	$('.habit-of-the-day-wrap .hotd-article-setting-wrapper > .article-setting:eq(0) > [data-name="article-hotd-excerpt"]').text() || 
+						                	'';
+							            }
+						                
+						 								var daily_tmp_short_url = data.response.posts[0].short_url || data.response.posts[0].post_url || '';
+						                if(daily_img!=='' && daily_tmp_short_url!=='') {
+																$('.habit-of-the-day-wrap .post-prev-img a' ).html('<div id="habit-of-the-day-img" style="background-image:url('+daily_img+');" width="100%"></div>');
+					                    	$('.habit-of-the-day-wrap a' ).attr('href', daily_tmp_short_url);
+						                    if(daily_tmp_title!=='') {
+						                        $('.habit-of-the-day-wrap .post-prev-title > h2 > a').text(daily_tmp_title);
+						                    }
+						                    if(daily_tmp_excerpt!=='') {
+						                        $('.habit-of-the-day-wrap .excerpt').text(daily_tmp_excerpt);
+						                    }
+						                    $('.habit-of-the-day-wrap').attr('data-post-id', data.response.posts[0]['id']);
+						                    $('.hotd-article-setting-wrapper').remove();
+						
+						                } else {
+						                    $('.habit-of-the-day-wrap').remove();
+						                }
+	                				
+	                				/* Reserve for text post */
+		                		} else {
+		                			$('.habit-of-the-day-wrap').remove();
+		                		}
+	                		} else {
+	                			$('.habit-of-the-day-wrap').remove();
+	                		}
+	                	} else {
+	                		$('.habit-of-the-day-wrap').remove();
+	                	}
+	                },
+									error: function (request, status, error) {
+										$('.habit-of-the-day-wrap').remove();
+									}
+	              });
+            }
+        </script>
+    </section>
+    {/block:IndexPage}
+
+
+    {block:IndexPage}
+    <section class="page-section pt-50">
+        <div class="container relative">
+
+            <div class="row multi-columns-row article-list-item-container"></div>
+						<div style="text-align: center;">
+							<a id="btn-load-more" class="btn btn-mod btn-gray btn-medium btn-round" href="#" 
+							onclick="tumblr_get_post(get_current_tag(), window.listing_post_offset, window.listing_post_per_page, 'listing'); return false;">Load More</a>
+						</div>
+        </div>
+        <script type="text/javascript">
+        	if(window.location.pathname=="/") {
+        		$(window).load(function() {
+        			if($('.habit-of-the-day-wrap').length > 0 && $('.habit-of-the-day-wrap').data('post-id')!==undefined && $('.habit-of-the-day-wrap').data('post-id')!=='') {
+        				var tmp_htod_id = $('.habit-of-the-day-wrap').data('post-id');
+        				$('.article-list-item-wrap[data-post-id='+tmp_htod_id+']').remove();
+        			}
+        		});
+        	}
+        </script>
+        
+    </section>
+    {/block:IndexPage}
+    {block:PermalinkPage}{block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}
+    <!-- This is Permalink Page -->
+    <section class="page-section pb-0 pt-50 monthly-theme-wrapper" data-theme-month="{block:Date}{Year}{MonthNumberWithZero}{/block:Date}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-0 align-center">
+                    <h1 class="monthly-title"><!-- Handle By Javascript : article-theme-month-title --></h1>
+                    <!--<p class="monthly-desc-wrap">FEATURED STORY / <span class="mothly-theme-month"></span>月主題</p>-->
+                    <p class="monthly-desc-wrap" style="padding-right: 15px;">FEATURED STORY</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section article-cover-img-rectangle-wrap pb-0 pt-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-0 align-center">
+                    <div class="article-cover-img-wrap article-cover-img-rectangle">
+                        {block:Photo}<img src="{PhotoURL-HighRes}" width="100%" />{/block:Photo}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section pb-0 mb-140 pt-50">
+        <div class="container {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} active exposed">
+            <div class="row">
+                <div class="col-sm-8 col-md-8 col-md-offset-0">
+
+                    <div class="article-info main-article-info">
+                        <span class="article-category">{block:HasTags}{block:Tags}<span class="article-category-item"><a href="{TagURL}">{Tag}</a></span>{/block:Tags}{/block:HasTags} /</span>
+                        <script type="text/javascript">
+                            
+                            var first_tag_name = $('.main-article-info .article-category .article-category-item:eq(0) > a').text().trim().toLowerCase();
+                            if(first_tag_name!='featured story')
+                            	$('.main-article-info .article-category .article-category-item:gt(0)').remove();
+                            else 
+                            	$('.main-article-info .article-category .article-category-item:not(:eq(1))').remove();
+                            
+                        </script>
+                        <h3 class="article-title post-prev-title font-alt blog-item-title"><a href="{Permalink}">{block:Title}{title}{/block:Title}</a></h3>
+                        <span class="article-excertpt"></span>
+                        <hr class="full-width">
+                        <div class="row mb-30">
+                            <div class="col-xs-6 col-sm-4 col-md-4">
+                                <div class="blog-item-data">{DayOfMonthWithZero} <span>{Month}</span> </div>
+                            </div>
+                            <div class="hidden-xs col-sm-4 col-md-4">&nbsp;</div>
+                            <div class="col-xs-6 col-sm-4 col-md-4 align-right"><div class="fb-like" data-href="{Permalink}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></div>
+                        </div>
+                    </div>
+
+                    <section class="page-section nopadding ">
+
+                        <div class="article-content">
+
+                            {block:Text}
+                            <div class="post-content">
+                                {block:Body}
+                                <div class="body-text">
+                                    {Body}
+                                </div>
+                                {/block:Body}
+                            </div>
+                            {/block:Text}
+
+                            {block:Photo}
+                            <figure class="post-content {block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
+                                {block:Caption}
+                                <figcaption class="caption">
+                                    {Caption}
+                                </figcaption>
+                                {/block:Caption}
+                            </figure>
+                            {/block:Photo}
+
+                            {block:Photoset}
+                            <figure class="post-content photoset {block:Caption}with-caption{/block:Caption}">
+                                {Photoset}
+                                {block:Caption}
+                                <figcaption class="caption">
+                                    {Caption}
+                                </figcaption>
+                                {/block:Caption}
+                            </figure>
+                            {/block:Photoset}
+
+                            {block:Quote}
+                            <div class="post-content">
+                                <blockquote class="{Length}">
+                                    {Quote}
+                                </blockquote>
+                                {block:Source}
+                                <div class="source">{Source}</div>
+                                {/block:Source}
+                            </div>
+                            {/block:Quote}
+
+
+                            {block:Link}
+                            <div class="post-content{block:Description} with-caption{/block:Description}{block:Thumbnail} with-thumbnail{/block:Thumbnail}">
+                                <div class="link-wrapper">
+                                    <a {Target} href="{URL}" class="link">
+                                        {block:Thumbnail}
+                                        <div class="link-thumbnail"><img src="{Thumbnail-HighRes}" alt="" /></div>
+                                        {/block:Thumbnail}
+                                        <div class="link-text-wrapper clearfix">
+                                            <div class="link-text">
+                                                {block:Host}
+                                                <div class="link-host">{Host}</div>
+                                                {/block:Host}
+                                                <h2 class="link-title">{Name}</h2>
+                                                {block:Excerpt}
+                                                <div class="link-excerpt">{Excerpt}</div>
+                                                {/block:Excerpt}
+                                                {block:Author}
+                                                <div class="link-author">{Author}</div>
+                                                {/block:Author}
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                {block:Description}
+                                <div class="caption">
+                                    {Description}
+                                </div>
+                                {/block:Description}
+                            </div>
+                            {/block:Link}
+
+                            {block:Chat}
+                            <div class="post-content">
+                                {block:Title}<h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                                <ul class="conversation">
+                                    {block:Lines}
+                                    <li class="chat-{Alt}">{block:Label}<span class="label">{Label}</span>{/block:Label} {Line}</li>
+                                    {/block:Lines}
+                                </ul>
+                            </div>
+                            {/block:Chat}
+
+                            {block:Audio}
+                            <div class="post-content {block:Caption}with-caption{/block:Caption}">
+                                <div class="audio_container">
+                                    {block:AudioEmbed}
+                                    {AudioEmbed color="white"}
+                                    {/block:AudioEmbed}
+                                </div>
+                                {block:Caption}
+                                <div class="caption">
+                                    {Caption}
+                                </div>
+                                {/block:Caption}
+                            </div>
+                            {/block:Audio}
+
+                            {block:Video}
+                            <figure class="post-content {block:Caption}with-caption{/block:Caption}">
+                                <div class="video-wrapper">
+                                    {Video-700}
+                                </div>
+                                {block:Caption}
+                                <figcaption class="caption">
+                                    {Caption}
+                                </figcaption>
+                                {/block:Caption}
+                            </figure>
+                            {/block:Video}
+
+                            {block:Answer}
+                            <div class="post-content">
+                                <div class="note-item note-item-asker">
+                                    <div class="text">
+                                        <p class="asker"><strong>{Asker}</strong> asked:</p>
+                                        <div class="asker-question">
+                                            {Question}
+                                        </div>
+                                    </div>
+                                    <div class="avatar">
+                                        <img class="asker-avatar" src="{AskerPortraitURL-96}" alt="">
+                                    </div>
+                                </div>
+
+                                {block:Answerer}
+                                <div class="note-item note-item-answerer">
+                                    <div class="text">
+                                        <p class="answerer"><strong>{Answerer}</strong> answered:</p>
+                                        <div class="answerer-answer">
+                                            {Answer}
+                                        </div>
+                                    </div>
+                                    <div class="avatar">
+                                        <img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt="">
+                                    </div>
+                                </div>
+                                {/block:Answerer}
+
+                                <div class="replies">
+                                    {Replies}
+                                </div>
+                            </div>
+                            {/block:Answer}
+														
+														<div class="align-right"><div class="fb-like" data-href="{Permalink}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></div>
+														
+                            {block:HasTags}
+                            <div class="page-section nopadding mt-50 mb-30 article-tag-wrap">
+                                <div class="tags">
+                                    {block:Tags}
+                                    <a href="{TagURL}" data-tag="{tag}">{tag}</a>
+                                    {/block:Tags}
+                                </div>
+                            </div>
+                            {/block:HasTags}
+
+                            <div class="row article-footer-info">
+                                <div class="footer-text-container">
+                                	<div class="footer-decoration-top"></div>
+                                	<p class="article-publisher-desc"></p>
+                                	<div class="footer-decoration-end">
+                                		<a  class="footer-decoration-end-button btn btn-mod btn-circle btn-small" href="" onclick="_tracking()" target="_blank">立即登記</a>	
+                                	</div>
+                                </div>
+                            </div>
+
+
+                        </div> <!-- article-content -->
+                        <script type="text/javascript">
+                        		if(first_tag_name.toLowerCase()=='featured story') {
+                                get_monthly_theme();
+                            } else {
+                                $('.monthly-theme-wrapper').remove();
+                            }
+                            $(document).ready(function() {
+
+                                //var article_cover_image_rectangle = $('.article-setting:eq(0) [data-name="article-cover-image-rectangle"]').text() || '';
+																var article_cover_image_rectangle = $('.article-content img:eq(0)').attr('src') || '';
+                                var article_title = $('.article-setting:eq(0) [data-name="article-title"]').text() || '';
+                                var article_excerpt = $('.article-setting:eq(0) [data-name="article-excerpt"]').text() || '';
+                                var hide_default_related_article = $('.article-setting:eq(0) [data-name="hide-default-related-article"]').text() || '';
+                                var showing_cover_image = true;
+                                
+                                var footer_template = "";
+                                $('.article-content .tags a').each(function() {
+                                	var tmp_tag_text = $(this).text();
+                                	if(tmp_tag_text.indexOf("footer_") >= 0) {
+                                		footer_template = tmp_tag_text.replace("footer_", "");
+                                		$(this).remove();
+                                	}
+                                	
+                                	console.log("Tag : " + tmp_tag_text);
+                                	
+                                	if(tmp_tag_text.indexOf("hideCoverImage") >= 0) {
+                                		showing_cover_image = false;
+                                		$(this).remove();
+                                	}
+                                	
+                                });
+                                
+                                if(footer_template==="" && $('.article-setting:eq(0) [data-name="footer-template"]').length > 0) {
+                                	footer_template = $('.article-setting:eq(0) [data-name="footer-template"]').text();
+                                }
+                                
+                                if(footer_template) {
+                                    $('.article-footer-info').attr('data-slug', footer_template);
+                                    get_article_footer(footer_template);
+                                } else {
+                                    $('.article-footer-info').remove();
+                                }
+                                
+                                /* Get first image in content as the cover image */
+                                if(showing_cover_image) {
+                                	if(
+                                    article_cover_image_rectangle!=='' &&
+                                    $('.article-cover-img-rectangle-wrap .article-cover-img-rectangle').length > 0 &&
+                                    $('.article-cover-img-rectangle-wrap .article-cover-img-rectangle').html().toString().trim()==''
+	                                ){
+	                                  $('.article-cover-img-rectangle-wrap .article-cover-img-rectangle').html('<img src="'+article_cover_image_rectangle+'" width="100%"/>');
+																		$('.article-content img:eq(0)').remove();
+	                                } else if(article_cover_image_rectangle=='' && $('.article-cover-img-rectangle-wrap .article-cover-img-rectangle').html().trim()=='') {
+	                                  $('.article-cover-img-rectangle-wrap .article-cover-img-rectangle').remove();
+	                                }
+                                }
+                                
+                                /* Get first image in content as the cover image */
+
+                                if(article_title!=='' && $('.main-article-info.article-info > .article-title > a').text().trim() == "") {
+                                    $('.main-article-info.article-info > .article-title > a').text(article_title);
+                                }
+
+                                if(article_excerpt!=='' && $('.main-article-info.article-info > .article-excertpt').text().trim() == "") {
+                                    $('.main-article-info.article-info > .article-excertpt').text(article_excerpt);
+                                }
+
+                                if(hide_default_related_article==="true") {
+                                    $('.other-related-post-wrap').remove();
+                                }
+
+                            });
+                        </script>
+
+                        <!-- AD -->
+                        <div class="row">
+                            <section class="page-section pt-50 visible-xs-block">
+                                <div class="mobile-ad ad">
+																	<!--<div style="width:300px; height: 250px; margin: 0 auto;"><iframe src="https://yahoo-promotion.myguide.hk/m/wp_ad/clp/300x250/" frameborder="0" scrolling="no" style="300px" width="300px" height="250px"></iframe></div>-->
+								    <script type="text/javascript">
+											if(mobilecheck()) {
+												var tag = get_first_escape_tag("{block:Tags}{Tag},{/block:Tags}");
+												document.write('<scr'+'ipt language=\'JavaScript\' type=\'text/javascript\' src=\'//hk.adserver.yahoo.com/a?f={text:SpaceID}&at="hashtag='+tag+'"&p=hk_promo_betterme&l=LREC&c=sr\'></scr'+'ipt>');
+											}
+										</script>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- AD -->
+                        <div class="page-section pb-0 pt-50 other-related-post-wrap mb-0">
+													<div class="row"><div class="col-md-12">
+														<h3 class="override-section-title nomargin"><b>其他好習慣</b></h3><hr class="full-width">
+														<div class="others-good-habits-wrap"></div>
+														<div style="text-align: center;">
+															<a id="btn-load-more" class="btn btn-mod btn-gray btn-small btn-round" href="#" 
+															onclick="tumblr_get_post($('.main-article-info .article-category .article-category-item > a').text(), window.related_post_offset, window.related_post_per_page, 'related_post'); return false;">Load More</a>
+														</div>
+													</div></div>
+                        </div>
+                    </section>
+
+                </div>
+                <div class=" col-sm-4 col-md-4 desktop-ad ad hidden-xs">
+                <!--<a onclick="tracking('lrec')" href="https://www.clp.com.hk/poweryourlove/?lang=zh-HK&medias=yahooKplus300x250-lrec&campaign=pyl2016&utm_source=yahoocm2016Kplus300x250-lrec&utm_medium=Kplus300x250-lrec&utm_campaign=pyl2016"><img src="http://static.tumblr.com/3yh6fjw/lg8o72alb/lrec.jpg" width="300px"></a>-->
+                <!--<a onclick="tracking('lrec')" href="https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=20&mc=click&pli=17747333&PluID=0&ord=${CACHEBUSTER}"><img src="http://static.tumblr.com/3yh6fjw/lg8o72alb/lrec.jpg" width="300px"></a>-->
+	                  <script type="text/javascript">
+											if(!mobilecheck()) {
+												var tag = get_first_escape_tag("{block:Tags}{Tag},{/block:Tags}");
+												document.write('<scr'+'ipt language=\'JavaScript\' type=\'text/javascript\' src=\'//hk.adserver.yahoo.com/a?f={text:SpaceID}&at="hashtag='+tag+'"&p=hk_promo_betterme&l=LREC&c=sr\'></scr'+'ipt>');
+											}
+										</script>
+										<!--<script language='JavaScript' type='text/javascript' src='//hk.adserver.yahoo.com/a?f={text:SpaceID}&p=hk_promo_betterme&l=LREC&c=sr'></script>-->
+                </div>
+
+            </div>
+        </div>
+        
+    </section>
+		
+		<script type="text/javascript">
+		function _tracking() {
+			ga('send', 'event', 'Article Footer Button', "{PostID}");
+		}	
+		</script>
+    {/block:Posts}{/block:PermalinkPage}
+
+    <hr class="full-width">
+    
+    <footer class="ft-section bg-white footer" id="page-footer">
+        <div class="footer-wrap"></div>
+
+        <div class="copyright align-center font-alt">
+            <!--<img src="http://static.tumblr.com/3yh6fjw/aIho70a23/logo_header-1.svg" width="90px" height="auto"><br>-->
+            Yahoo Lifestyles Network
+        </div>
+    </footer>
+</section>
+<script>
+    var Optica = {};
+    Optica.ENDLESS_SCROLLING = {block:IfEndlessScrolling}true{/block:IfEndlessScrolling}{block:IfNotEndlessScrolling}false{/block:IfNotEndlessScrolling};
+    Optica.LAYOUT = "{select:Layout}";
+    Optica.GRID_LAYOUT = (Optica.LAYOUT === 'grid');
+    Optica.TITLE_COLOR = "{TitleColor}";
+    Optica.ACCENT_COLOR = "{AccentColor}";
+    Optica.BACKGROUND_COLOR = "{BackgroundColor}";
+    Optica.RELATED_POSTS_CTA_VARIANTS = [
+        {
+            variant: "C",
+            text: "{lang:Open In App CTA C}"
+        },
+        {
+            variant: "D",
+            text: "{lang:Open In App CTA D}"
+        },
+        {
+            variant: "E",
+            text: "{lang:Open In App CTA E}"
+        }
+    ];
+    Optica.NO_LIKES_VARIANTS = [
+        "{lang:This Tumblr hasnt liked any posts yet}",
+        "{lang:This Tumblr doesnt like anything yet}",
+        "{lang:No likes Sheesh}",
+        "{lang:Amazing This Tumblr doesnt like anything}",
+        "{lang:Incredible This Tumblr doesnt like anything}",
+        "{lang:Neat This Tumblr doesnt like anything}",
+        "{lang:Ta-da No likes}",
+        "{lang:Plink The sound of no likes}",
+        "{lang:Apparently this Tumblr is hard to please}",
+        "{lang:Wow This Tumblr hasnt liked anything ever}",
+        "{lang:This Tumblr hasnt liked anything yet How very intriguing}",
+        "{lang:This Tumblr has never met a post it didnt not like}",
+        "{lang:No likes here Just a howling wind}",
+        "{lang:Swoosh No likes}"
+    ];
+    Optica.NO_FOLLOWING_VARIANTS = [
+        "{lang:This Tumblr hasnt followed any other Tumblrs}",
+        "{lang:Aw This Tumblr isnt following anyone}",
+        "{lang:Nope this Tumblr doesnt follow anyone}",
+        "{lang:This cool Tumblr doesnt follow anyone}",
+        "{lang:This far-out Tumblr doesnt follow anyone}",
+        "{lang:This fiercely independent Tumblr doesnt follow anyone}",
+        "{lang:This Tumblr doesnt follow anything except for its own rules}",
+        "{lang:This Tumblr doesnt really follow anything}"
+    ];
+</script>
+
+<script>!window.jQuery && document.write(unescape('%3Cscript src="http://static.tumblr.com/vr9xgox/sBgmmjhyw/jquery-1.9.1.min.js"%3E%3C/script%3E'));</script>
+<script src="http://static.tumblr.com/27gzhx7/8gso5uj7v/main-min.js"></script>
+
+{block:IfGoogleAnalyticsID}
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{text:Google Analytics ID}', 'auto');
+    ga('send', 'pageview');
+    function tracking(ad){
+			ga('send', 'event', 'Ad Behavior', ad);
+		}
+		
+		
+</script>
+{/block:IfGoogleAnalyticsID}
+
+{block:IfRelatedPosts}
+{block:RelatedPosts}
+<script src="https://secure.static.tumblr.com/t1owtkf/bSAnvroul/jquery.waypoints.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function() {
+        var trackingPixels = {TrackingPixels};
+
+        var analytics_frame = document.getElementById('ga_target');
+        var analytics_iframe_loaded;
+        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        var eventer = window[eventMethod];
+        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+        eventer(messageEvent,function(e) {
+            var message = (e.data && e.data.split) ? e.data.split(';') : '';
+            if (message[0] == 'analytics_iframe_loaded') {
+                analytics_iframe_loaded = true;
+            }
+        });
+
+        $('.related-posts > article').waypoint(function() {
+            if (!analytics_iframe_loaded) {
+                return;
+            }
+
+            var post_id = $(this.element).data('post-id');
+            if (typeof trackingPixels[post_id] == 'undefined' || !trackingPixels[post_id]) {
+                return;
+            }
+
+            var trackingPixel = trackingPixels[post_id];
+
+            analytics_frame.contentWindow.postMessage(
+                    ['tick_related_post', trackingPixel].join(';'),
+                    analytics_frame.src.split('/analytics.html')[0]
+            );
+
+            trackingPixels[post_id] = null;
+        }, {
+            offset: '100%'
+        });
+    });
+</script>
+{/block:RelatedPosts}
+{/block:IfRelatedPosts}
+{block:IfSyntaxHighlighting}
+<script type="text/javascript" src="http://static.tumblr.com/ehm1tdz/Mhunye5t3/highlight.pack.js"/></script>
+<script type="text/javascript">
+        (function($) {
+            $(document).ready(function() {
+                $('.post-content pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });
+            });
+        })(window.jQuery);
+
+</script>
+{/block:IfSyntaxHighlighting}
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/1UYo5z8xe/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/pqXo5z8y1/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/f19o5z8yg/smoothscroll.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/LG0o5z8z2/jquery.scrollto.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/9xOo5z8zi/jquery.localscroll.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/8j7o5z8zz/jquery.viewport.mini.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/UCPo5z90d/jquery.countto.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/1WGo5z90o/jquery.appear.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/55ko5z914/jquery.sticky.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/1H0o5z91k/jquery.parallax-1.1.3.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/9Rso5z92y/owl.carousel.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/Lvio5z93k/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/nQvo5z93v/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/G5So5z949/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/3Oco5z95f/gmap3.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/XuMo5z95v/wow.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/hZko5z967/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/GICo5z96o/jquery.simple-text-rotator.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/nm7o5z96y/all.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/1muo5z979/contact-form.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/8tMo5z97p/jquery.ajaxchimp.min.js"></script>
+
+<script type="text/javascript">
+	var pixel_space_id = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ?"964445006" :"1197801321";
+	document.write('<scr'+'ipt language="JavaScript" type="text/javascript" src="https://hk.adserver.yahoo.com/a?f='+pixel_space_id+'&p=hk_promo_betterme&l=AN1&c=sr"></scr'+'ipt>');
+</script>
+<!--<script language="JavaScript" type="text/javascript" src="https://hk.adserver.yahoo.com/a?f={text:SpaceID}&p=hk_promo_betterme&l=AN1&c=sr"></script>-->
+<!--<noscript><iframe src="https://hk.adserver.yahoo.com/a?f={text:SpaceID}&p=hk_promo_betterme&l=AN1&c=sh&bg=ffffff" width="0px" height="0px" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" ALLOWTRANSPARENCY="true"></noscript> -->
+
+</body>
+</html>
