@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE 8]><html class="lt-ie10 lt-ie9"> <![endif]-->
 <!--[if IE 9]><html class="lt-ie10"> <![endif]-->
 <!--[if gt IE 9]><!--> <html> <!--<![endif]-->
@@ -2052,7 +2052,8 @@
 																	<!--<div style="width:300px; height: 250px; margin: 0 auto;"><iframe src="https://yahoo-promotion.myguide.hk/m/wp_ad/clp/300x250/" frameborder="0" scrolling="no" style="300px" width="300px" height="250px"></iframe></div>-->
 								    <script type="text/javascript">
 											if(mobilecheck()) {
-												var tag = get_first_escape_tag("{block:Tags}{Tag},{/block:Tags}");
+												//var tag = get_first_escape_tag("{block:Tags}{Tag},{/block:Tags}");
+												var tag = "{block:Tags}{Tag};{/block:Tags}";
 												document.write('<scr'+'ipt language=\'JavaScript\' type=\'text/javascript\' src=\'//hk.adserver.yahoo.com/a?f={text:SpaceID}&at="hashtag='+tag+'"&p=hk_promo_betterme&l=LREC&c=sr\'></scr'+'ipt>');
 											}
 										</script>
@@ -2078,8 +2079,9 @@
                 <!--<a onclick="tracking('lrec')" href="https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=20&mc=click&pli=17747333&PluID=0&ord=${CACHEBUSTER}"><img src="http://static.tumblr.com/3yh6fjw/lg8o72alb/lrec.jpg" width="300px"></a>-->
 	                  <script type="text/javascript">
 											if(!mobilecheck()) {
-												var tag = get_first_escape_tag("{block:Tags}{Tag},{/block:Tags}");
-												document.write('<scr'+'ipt language=\'JavaScript\' type=\'text/javascript\' src=\'//hk.adserver.yahoo.com/a?f={text:SpaceID}&at="hashtag='+tag+'"&p=hk_promo_betterme&l=LREC&c=sr\'></scr'+'ipt>');
+												//var tag = get_first_escape_tag("{block:Tags}{Tag},{/block:Tags}");
+												var tag = "{block:Tags}{Tag};{/block:Tags}";
+												document.write('<scr'+'ipt language=\'JavaScript\' type=\'text/javascript\' src=\'//hk.adserver.yahoo.com/a?f={text:SpaceID}&at=hashtag="'+tag+'"&p=hk_promo_betterme&l=LREC&c=sr\'></scr'+'ipt>');
 											}
 										</script>
 										<!--<script language='JavaScript' type='text/javascript' src='//hk.adserver.yahoo.com/a?f={text:SpaceID}&p=hk_promo_betterme&l=LREC&c=sr'></script>-->
