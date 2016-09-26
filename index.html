@@ -1088,6 +1088,7 @@
                         
                         var tmp_footer_link_bg_color = '#a61753';
                         var tmp_footer_link_text_color = '#fff';
+                        var tmp_footer_border_style = 'btn-circle';
                         if(
                                 typeof jQuery(this)[0].gsx$footerlinkbgcolor!='undefined' &&
                                 typeof jQuery(this)[0].gsx$footerlinkbgcolor.$t!='undefined' &&
@@ -1100,6 +1101,14 @@
                             tmp_footer_link_text_color = (jQuery(this)[0].gsx$footerlinktextcolor.$t)
                         }
                         
+                        if(
+                        	typeof jQuery(this)[0].gsx$footerborderstyle!='undefined' &&
+                          typeof jQuery(this)[0].gsx$footerborderstyle.$t!='undefined' &&
+                          jQuery(this)[0].gsx$footerborderstyle.$t!=''
+                        ) {
+                        	tmp_footer_border_style = 'btn-' + jQuery(this)[0].gsx$footerborderstyle.$t;
+                        }
+                        
                         footer_templates.push({
                         	text:tmp_footer_text,
                         	fd_top:tmp_footer_hd,
@@ -1107,6 +1116,7 @@
                         	flink:tmp_footer_link,
                         	flinkbgcolor: tmp_footer_link_bg_color,
                         	flinktextcolor: tmp_footer_link_text_color,
+                        	flinkborderstyle: tmp_footer_border_style,
                         	flink_name:tmp_footer_link_name
                         });
                     }
@@ -1136,6 +1146,7 @@
                 		jQuery('.footer-text-container a.footer-decoration-end-button').attr('href', footer_templates.flink); 
                 		jQuery('.footer-text-container a.footer-decoration-end-button').css({'background-color':footer_templates.flinkbgcolor, 'color':footer_templates.flinktextcolor}); 
                 		jQuery('.footer-text-container a.footer-decoration-end-button').text(footer_templates.flink_name); 
+                		jQuery('.footer-text-container a.footer-decoration-end-button').addClass(footer_templates.flinkborderstyle); 
                 } else 
              				jQuery('.footer-text-container a.footer-decoration-end-button').remove(); 	   		
              		
@@ -1967,7 +1978,7 @@
                                 	<div class="footer-decoration-top"></div>
                                 	<p class="article-publisher-desc"></p>
                                 	<div class="footer-decoration-end">
-                                		<a  class="footer-decoration-end-button btn btn-mod btn-circle btn-small" href="" onclick="_tracking()" target="_blank">立即登記</a>	
+                                		<a  class="footer-decoration-end-button btn btn-mod btn-small" href="" onclick="_tracking()" target="_blank">立即登記</a>	
                                 	</div>
                                 </div>
                             </div>
