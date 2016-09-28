@@ -2021,11 +2021,13 @@
                                 	footer_template = $('.article-setting:eq(0) [data-name="footer-template"]').text();
                                 }
                                 
-                                if(footer_template) {
+                                if(footer_template!=="") {
                                     $('.article-footer-info').attr('data-slug', footer_template);
                                     get_article_footer(footer_template);
                                 } else {
-                                    $('.article-footer-info').remove();
+                                    //$('.article-footer-info').remove();
+                                    $('.article-footer-info').attr('data-slug', "default");
+                                    get_article_footer(footer_template);
                                 }
                                 
                                 /* Get first image in content as the cover image */
