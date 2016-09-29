@@ -271,8 +271,8 @@
             background: rgba(255, 255, 255, .95);
         }
         .nav-menu-wrap .main-nav.mobile-on {
-            margin: 0 2%;
-            width: 96% !important;
+            margin: 0;
+            width: 100% !important;
             border-width: 1px;
         }
         .nav-menu-wrap .main-nav.small-height {
@@ -610,6 +610,10 @@
 		    content: '';
 			}
 		/*.mobile-ad > *, .desktop-ad > * {display: none;}*/
+		
+		@media screen and (max-width: 767px) {
+			.article-cover-img-rectangle-wrap > .container {padding: 0;}
+		}
         /* Override */
     </style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -1758,7 +1762,7 @@
     {/block:IndexPage}
     {block:PermalinkPage}{block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}
     <!-- This is Permalink Page -->
-    <section class="page-section pb-0 pt-50 monthly-theme-wrapper" data-theme-month="{block:Date}{Year}{MonthNumberWithZero}{/block:Date}">
+    <section class="page-section pb-0 pt-50 monthly-theme-wrapper hidden-xs" data-theme-month="{block:Date}{Year}{MonthNumberWithZero}{/block:Date}">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-md-offset-0 align-center">
@@ -1770,7 +1774,7 @@
         </div>
     </section>
 
-    <section class="page-section article-cover-img-rectangle-wrap pb-0 pt-50">
+    <section class="page-section article-cover-img-rectangle-wrap pb-0 pt-50 pt-xs-0">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-md-offset-0 align-center">
