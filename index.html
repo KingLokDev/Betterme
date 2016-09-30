@@ -612,7 +612,10 @@
 		/*.mobile-ad > *, .desktop-ad > * {display: none;}*/
 		
 		@media screen and (max-width: 767px) {
-			.article-cover-img-rectangle-wrap > .container {padding: 0;}
+			body {padding-top: 0 !important;;}
+			.article-cover-img-rectangle-wrap > .container,
+			.slider-wrapper .container
+			 {padding: 0;}
 		}
         /* Override */
     </style>
@@ -1589,7 +1592,7 @@
         if(slides!=="") {
 						var extra_class = (window.location.pathname.toLowerCase()=="/tagged/featured+story") ?"featured_story_slider" :"";
 						var slider_type = (window.location.pathname.toLowerCase()=="/tagged/featured+story") ?"item-carousel" :"work-full-slider";
-            var ele = '<section class="page-section nopadding slider-wrapper mt-50"><div class="container"><div class="work-full-slider owl-carousel owl-theme">';
+            var ele = '<section class="page-section nopadding slider-wrapper mt-50 mt-xs-0"><div class="container"><div class="work-full-slider owl-carousel owl-theme">';
             ele += slides;
             ele += '</div></div></section>';
             document.write(ele);
@@ -1601,7 +1604,7 @@
 					var ele = "";
 					slides+='<a href="http://betterme-magazine.tumblr.com/post/144192591065/"><div class="features-item" style="background-image:url(https://67.media.tumblr.com/41b27e1ff38a7c66e84f2006a9fc6f75/tumblr_inline_o70g2nc0y31sbgoqr_540.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>用Wi-Fi連接網絡</span></div><div class="features-descr"> 吳業坤 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192444015/"><div class="features-item" style="background-image:url(https://66.media.tumblr.com/cfec5c3b749b51889bad11bb394398c7/tumblr_inline_o70gc1GAO11sbgoqr_540.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>避免耗用備用電源</span></div><div class="features-descr"> 熊仔頭 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192466430/"><div class="features-item" style="background-image:url(https://67.media.tumblr.com/db3e49a66229d0dc452aced06887d96a/tumblr_inline_o70gc7mJkb1sbgoqr_540.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>減少使用風筒</span></div><div class="features-descr"> Miss Sue </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192527965/"><div class="features-item" style="background-image:url(http://67.media.tumblr.com/14c5d81f6a283234eb68524174f331f8/tumblr_inline_o70gm3568C1u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>善用抽濕機降溫</span></div><div class="features-descr"> 杜小喬 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192155110/"><div class="features-item" style="background-image:url(http://66.media.tumblr.com/87491e04c5051d2b803b12f93ec98785/tumblr_inline_o70gqb4Kdb1u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>定期檢查雪櫃門縫</span></div><div class="features-descr"> 蘇麗珊 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144191266510/"><div class="features-item" style="background-image:url(http://65.media.tumblr.com/34930e19b4b0bc274f18615f7128ba0e/tumblr_inline_o70hgd3pso1u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>冷氣風扇同時使用</span></div><div class="features-descr"> 項明生 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192547850/"><div class="features-item" style="background-image:url(http://65.media.tumblr.com/b9c10e95eb7ab0b68ae58294d680aa51/tumblr_inline_o70guz2RH11u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>善用剩餘冷氣</span></div><div class="features-descr"> Ding Ding </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192571155/"><div class="features-item" style="background-image:url(http://65.media.tumblr.com/afb2140dde5208660db59d7a4cbda252/tumblr_inline_o70gwiZS5t1u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>選用合適洗衣程序</span></div><div class="features-descr"> 林奕匡 </div></div></a>';
 					
-					ele = '<section class="page-section nopadding featured_story_slider slider-wrapper mt-50"><div class="container"><div class="item-carousel owl-carousel owl-theme">';
+					ele = '<section class="page-section nopadding featured_story_slider slider-wrapper mt-50 mt-xs-0"><div class="container"><div class="item-carousel owl-carousel owl-theme">';
 					ele += slides;
 					ele += '</div></div></section>';
 					document.write(ele);
@@ -1612,13 +1615,13 @@
 
 
     {block:IndexPage}
-    <section class="page-section pb-50 pt-50 habit-of-the-day-wrap">
+    <section class="page-section pb-0 pt-50 habit-of-the-day-wrap">
         <div class="container">
             <!-- Post Setting -->
             <div class="hotd-article-setting-wrapper" style="display: none;"></div>
             <!-- Post Setting -->
 
-            <div class="row mt-30 mb-30">
+            <div class="row mt-0 mb-10">
                 <div class="col-xs-2 col-sm-4 col-md-4"><hr class="full-width" /></div>
                 <div class="col-xs-8 col-sm-4 col-md-4 align-center nopadding special-section-title font-alt">HABIT OF THE DAY</div>
                 <div class="col-xs-2 col-sm-4 col-md-4"><hr class="full-width" /></div>
@@ -1636,7 +1639,7 @@
             </div>
             <div class="row">
                 <div class="">
-                    <hr class="full-width" />
+                    <hr class="full-width mb-0" />
                 </div>
             </div>
         </div>
@@ -1762,17 +1765,17 @@
     {/block:IndexPage}
     {block:PermalinkPage}{block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}
     <!-- This is Permalink Page -->
-    <section class="page-section pb-0 pt-50 monthly-theme-wrapper hidden-xs" data-theme-month="{block:Date}{Year}{MonthNumberWithZero}{/block:Date}">
+    <!--<section class="page-section pb-0 pt-50 monthly-theme-wrapper hidden-xs" data-theme-month="{block:Date}{Year}{MonthNumberWithZero}{/block:Date}">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-md-offset-0 align-center">
-                    <h1 class="monthly-title"><!-- Handle By Javascript : article-theme-month-title --></h1>
-                    <!--<p class="monthly-desc-wrap">FEATURED STORY / <span class="mothly-theme-month"></span>月主題</p>-->
+                    <h1 class="monthly-title"></h1>
+                    <!--<p class="monthly-desc-wrap">FEATURED STORY / <span class="mothly-theme-month"></span>月主題</p>--
                     <p class="monthly-desc-wrap" style="padding-right: 15px;">FEATURED STORY</p>
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <section class="page-section article-cover-img-rectangle-wrap pb-0 pt-50 pt-xs-0">
         <div class="container">
@@ -2067,7 +2070,7 @@
 
                         <!-- AD -->
                         <div class="row">
-                            <section class="page-section pt-50 visible-xs-block">
+                            <section class="page-section pt-50 pb-0 visible-xs-block text-center">
                                 <div class="mobile-ad ad">
 																	<!--<div style="width:300px; height: 250px; margin: 0 auto;"><iframe src="https://yahoo-promotion.myguide.hk/m/wp_ad/clp/300x250/" frameborder="0" scrolling="no" style="300px" width="300px" height="250px"></iframe></div>-->
 								    <script type="text/javascript">
