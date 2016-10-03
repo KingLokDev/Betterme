@@ -1689,7 +1689,7 @@
 							            }
 							            
 							            var daily_tmp_excerpt = "";
-							            for(l=1; l<=10; l++) {
+							            for(l=0; l<=10; l++) {
 							            	if($('.habit-of-the-day-wrap .hotd-article-setting-wrapper p:eq('+l+')').text()!=='') {
 								            	if(daily_tmp_excerpt=="") {
 									            	daily_tmp_excerpt = $('.habit-of-the-day-wrap .hotd-article-setting-wrapper p:eq('+l+')').text();
@@ -1716,7 +1716,7 @@
 						                    }
 						                    $('.habit-of-the-day-wrap').attr('data-post-id', data.response.posts[0]['id']);
 						                    
-						                    //$('.hotd-article-setting-wrapper').remove();
+						                    $('.hotd-article-setting-wrapper').remove();
 						
 						                } else {
 						                    $('.habit-of-the-day-wrap').remove();
