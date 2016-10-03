@@ -1658,9 +1658,9 @@
 	                },
 	                dataType: "jsonp",
 	                success: function(data) {
+	                	//console.log(9);	
 	                	if(data.meta.status==200) {
 	                		if(typeof data.response.posts!=='undefined' && data.response.posts.length > 0) {
-
 	                			if(
 	                			(data.response.posts[0].type!==undefined && data.response.posts[0].type=='photo' && data.response.posts[0].caption!==undefined && data.response.posts[0].caption!='') ||
 	                			(data.response.posts[0].type!==undefined && data.response.posts[0].type=='text' && data.response.posts[0].body!==undefined && data.response.posts[0].body!='')
@@ -1689,10 +1689,12 @@
 							            }
 							            
 							            var daily_tmp_excerpt = "";
-							            for(l=0; l<=10; l++) {
+							            for(l=1; l<=10; l++) {
 							            	if($('.habit-of-the-day-wrap .hotd-article-setting-wrapper p:eq('+l+')').text()!=='') {
-							            		daily_tmp_excerpt = $('.habit-of-the-day-wrap .hotd-article-setting-wrapper p:eq('+l+')').text();
-								            	daily_tmp_excerpt = daily_tmp_excerpt.substr(0,30);
+								            	if(daily_tmp_excerpt=="") {
+									            	daily_tmp_excerpt = $('.habit-of-the-day-wrap .hotd-article-setting-wrapper p:eq('+l+')').text();
+									            	daily_tmp_excerpt = daily_tmp_excerpt.substr(0,60) + (daily_tmp_excerpt.length > 60 ?"..." :"");
+								            	}
 							            	}
 							            }
 							            
@@ -1713,7 +1715,8 @@
 						                        $('.habit-of-the-day-wrap .excerpt').text(daily_tmp_excerpt);
 						                    }
 						                    $('.habit-of-the-day-wrap').attr('data-post-id', data.response.posts[0]['id']);
-						                    $('.hotd-article-setting-wrapper').remove();
+						                    
+						                    //$('.hotd-article-setting-wrapper').remove();
 						
 						                } else {
 						                    $('.habit-of-the-day-wrap').remove();
