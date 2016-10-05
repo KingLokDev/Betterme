@@ -610,7 +610,7 @@
 		    content: '';
 			}
 		/*.mobile-ad > *, .desktop-ad > * {display: none;}*/
-		
+		.mobile-ad {max-width: 300px; margin: 0 auto;}
 		@media screen and (max-width: 767px) {
 			body {padding-top: 0 !important;;}
 			.article-cover-img-rectangle-wrap > .container,
@@ -643,7 +643,7 @@
 					return_html += '<span class="article-category"><a href="/tagged/'+post_tag.toLowerCase().trim().replace(' ', '+')+'">'+post_tag+'</a></span>';
 					return_html += '<h2 class="article-title blog-item-title font-alt"><a href="'+post_permalink+'"'+(post_outlink ?' target="_blank"' :'')+'>'+ post_title +'</a></h2>';
 					if(post_excerpt!=='') {
-							return_html += '<span class=article-excertpt">'+post_excerpt+'</span>';
+							//return_html += '<span class=article-excertpt">'+post_excerpt+'</span>';
 					}
 					return_html += '</div></div>';
 				return_html += '</div>';
@@ -662,7 +662,7 @@
 					tmp_html += '<div class="post-prev-title font-alt"><h2 class="blog-item-title font-alt">';
 						tmp_html += '<a href="'+post_permalink+'"'+(post_outlink ?' target="_blank"' :'')+'>'+post_title+'</a>';
 					tmp_html += '</h2></div>';
-					tmp_html += '<div class="post-prev-text subtitle excerpt">'+post_excerpt+'</div>';
+					//tmp_html += '<div class="post-prev-text subtitle excerpt">'+post_excerpt+'</div>';
 				tmp_html += '</div>';
 				return tmp_html;
 			}
@@ -700,6 +700,7 @@
 						if(data.meta.status==200) {
 							if(typeof data.response.posts!=='undefined' && data.response.posts.length > 0) {
 								var post = data.response.posts;
+								var slides_arr = new Array();
 								for(i=0; i<post.length; i++) {
 									var content_body = post[i].body || post[i].caption;
 									content_body = content_body.replaceAll('<img', '<preimg');
@@ -762,6 +763,14 @@
 									
 
 									switch (callback_func) {
+										case 'slide':
+											slides+=slide_template(post_thumbnail, post_permalink, "HomePageSlide"+i);
+											
+											if(slides!=="") {
+													var extra_class = (window.location.pathname.toLowerCase()=="/tagged/featured+story") ?"featured_story_slider" :"";
+													var slider_type = (window.location.pathname.toLowerCase()=="/tagged/featured+story") ?"item-carousel" :"work-full-slider";
+							        }
+											break;
 										case 'listing':
 											if(post_id!='' && post_thumbnail!='' && post_permalink!='') {
 												tmp_html = template_article_list_item(post_id, post_tag, post_thumbnail, post_permalink, post_title, post_excerpt, post_outlink);
@@ -790,13 +799,22 @@
 										default: 
 											break;
 									}
-
-									
-									
 								}
 								
 							}
 							switch(callback_func) {
+								case 'slide':
+									if(slides!=="") {
+										setTimeout(function() {
+											var owl = $("#main-jumbotron .work-full-slider").data('owlCarousel');
+											owl.addItem(slides);
+											owl.reinit();
+										}, 1000);
+										
+									} else {
+										$("#main-jumbotron").remove();
+									}
+									break;
 								case 'listing':
 									window.total_available_post = data.response.total_posts;
 									window.listing_post_offset += window.listing_post_per_page;
@@ -817,10 +835,8 @@
 								default:
 									break;
 							}
-
-
-
 						}
+						return false;
 					},
 					error: function() {}
 				}).always(function () {
@@ -1169,10 +1185,11 @@
 
         function slide_template(imgPath, target_url, slideName) {
             var tmp_html = "";
+            imgPath = imgPath.replace("_540", "_1280");
             var currentPath = window.location.pathname;
             if((currentPath==="/" && slideName.indexOf("HomePageSlide") >= 0) || (currentPath==="/tagged/Featured+Story" && slideName.indexOf("FeaturedStorySlide")>=0)) {
 
-                tmp_html += '<div><div class=" relative"><div class="row">';
+                tmp_html += '<div class="item"><div class=" relative"><div class="row">';
                 tmp_html += '<div class="col-md-12 col-md-offset-0 nopadding align-center">';
                 if(target_url!=='')
                 	tmp_html += '<a href="' + target_url + '">';
@@ -1529,38 +1546,14 @@
             get_monthly_theme();
         }
     </script>
-
-
+		<section id="main-jumbotron" class="page-section nopadding slider-wrapper mt-50 mt-xs-0"><div class="container"><div class="work-full-slider owl-carousel owl-theme">
+		</div></div></section>
+		
     <script type="text/javascript">
-        var slides = "";
+        slides = "";
+        var tmp_slide_info = tumblr_get_post("featured story", 0, 5, "slide");
     </script>
-    {block:IfEnableHomePageSlide1}
-    <script type="text/javascript">
-        slides += slide_template("{image:HomePageSlide1}", "{text:HomePageSlide1URL}", "HomePageSlide1");
-    </script>
-    {/block:IfEnableHomePageSlide1}
-    {block:IfEnableHomePageSlide2}
-    <script type="text/javascript">
-        slides += slide_template("{image:HomePageSlide2}", "{text:HomePageSlide2URL}", "HomePageSlide2");
-    </script>
-    {/block:IfEnableHomePageSlide2}
-    {block:IfEnableHomePageSlide3}
-    <script type="text/javascript">
-        slides += slide_template("{image:HomePageSlide3}", "{text:HomePageSlide3URL}", "HomePageSlide3");
-    </script>
-    {/block:IfEnableHomePageSlide3}
-    {block:IfEnableHomePageSlide4}
-    <script type="text/javascript">
-        slides += slide_template("{image:HomePageSlide4}", "{text:HomePageSlide4URL}", "HomePageSlide4");
-    </script>
-    {/block:IfEnableHomePageSlide4}
-    {block:IfEnableHomePageSlide5}
-    <script type="text/javascript">
-        slides += slide_template("{image:HomePageSlide5}", "{text:HomePageSlide5URL}", "HomePageSlide5");
-    </script>
-    {/block:IfEnableHomePageSlide5}
-
-
+    
     {block:IfEnableFeaturedStorySlide1}
     <script type="text/javascript">
         slides += slide_template("{image:FeaturedStorySlide1}", "{text:FeaturedStorySlide1URL}", "FeaturedStorySlide1");
@@ -1588,16 +1581,6 @@
     {/block:IfEnableFeaturedStorySlide5}
 
     <script type="text/javascript">
-		
-        if(slides!=="") {
-						var extra_class = (window.location.pathname.toLowerCase()=="/tagged/featured+story") ?"featured_story_slider" :"";
-						var slider_type = (window.location.pathname.toLowerCase()=="/tagged/featured+story") ?"item-carousel" :"work-full-slider";
-            var ele = '<section class="page-section nopadding slider-wrapper mt-50 mt-xs-0"><div class="container"><div class="work-full-slider owl-carousel owl-theme">';
-            ele += slides;
-            ele += '</div></div></section>';
-            document.write(ele);
-        }
-				
 				// Carousel on Feature Story page, Backup mode
 				if(false && window.location.pathname.toLowerCase()=="/tagged/featured+story") {
 					var slides = "";
@@ -1693,7 +1676,7 @@
 							            	if($('.habit-of-the-day-wrap .hotd-article-setting-wrapper p:eq('+l+')').text()!=='') {
 								            	if(daily_tmp_excerpt=="") {
 									            	daily_tmp_excerpt = $('.habit-of-the-day-wrap .hotd-article-setting-wrapper p:eq('+l+')').text();
-									            	daily_tmp_excerpt = daily_tmp_excerpt.substr(0,60) + (daily_tmp_excerpt.length > 60 ?"..." :"");
+									            	daily_tmp_excerpt = daily_tmp_excerpt.substr(0,120) + (daily_tmp_excerpt.length > 120 ?"..." :"");
 								            	}
 							            	}
 							            }
