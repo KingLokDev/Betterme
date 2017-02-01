@@ -22,14 +22,14 @@
     {block:Hidden}
     <meta name="if:Sliding header" content="1">
     <meta name="if:Show navigation" content="1">
-    <meta name="if:Endless scrolling" content="1"> 
+    <meta name="if:Endless scrolling" content="1">
     <meta name="if:Syntax highlighting" content="0">
     <meta name="select:Layout" content="regular" title="Regular">
     <meta name="select:Layout" content="narrow" title="Narrow">
     <meta name="select:Layout" content="grid" title="Grid">
     <meta name="text:Disqus shortname" content="">
     <meta name="text:Google analytics ID" content="">
-    
+
     <meta name="if:EnableHomePageSlide1" content="0"/>
     <meta name="if:EnableHomePageSlide2" content="0"/>
     <meta name="if:EnableHomePageSlide3" content="0"/>
@@ -210,13 +210,13 @@
         .header-s1{background-color:white;}
         .owl-wrapper .owl-item .row {margin-left: 0; margin-right: 0;}
 				header#top .row {margin: 0;}
-				
+
         .font-alt {font-family:  Dosis, "Microsoft JhengHei", arial, sans-serif;}
         .font-alt-nav{font-family: Dosis, sans-serif;}
 
         .nopadding {padding: 0;}
         .nomargin {margin: 0;}
-        
+
         .bg-white{background:white;}
         hr.full-width {width: 100%;}
         html {height: auto;}
@@ -237,12 +237,12 @@
             font-family: dosis;
             font-size: 1em;
         }
-    
+
         .blog-item-data {margin-bottom: 0px;}
         .post-content .caption{margin: 20px 0;}
         .post-content img {margin: 15px 0;}
         .mb-15 {margin-bottom: 15px;}
-        
+
         .blog-title .wrap {
             border-color: #434343;
             font-size: 42px;
@@ -376,7 +376,7 @@
         .post-prev-text {
             font-size: 15px;
         }
-        
+
         .article-list-item-wrap h2.blog-item-title {
             width: 100%;
             white-space: nowrap;
@@ -394,11 +394,11 @@
         }
         .article-info .article-category,
         .article-info .article-excertpt {
-            font-size: 14px; 
+            font-size: 14px;
         }
         .post-prev-text.subtitle.excerpt, .article-info .article-excertpt{letter-spacing:0.2em;}
-        
-        
+
+
         .post-prev-tag.article-info .article-category {
             /*color: #B0B0B0;*/
             margin-bottom: 8px;
@@ -417,7 +417,7 @@
         .override-section-title  {
             color: #545454;
         }
-        
+
         .article-publish-date{font-size:12px;}
         .post-content, .post-content p.content {padding: 0;}
         .text .post-content {
@@ -436,11 +436,11 @@
         .article-info .article-title {
             margin: 5px 0;
         }
-				
+
 				.row.article-footer-info {
 					margin: auto 0;
 				}
-				
+
 				.footer-text-container .footer-decoration-top {
 					height: 80px;
 			    width: 100%;
@@ -476,7 +476,7 @@
 			    max-width: none !important;
 			    display: inline-block;
 				}
-				
+
         .other-related-post-wrap a {
             font-size: inherit;
             color: inherit;
@@ -569,7 +569,7 @@
             text-decoration: none;
             color: #999999;
         }
-				
+
 				.featured_story_slider .features-item {
 						min-height: 285px;
 						background-position: center;
@@ -577,11 +577,11 @@
 						background-repeat: no-repeat;
 				}
 				.featured_story_slider .features-item a {
-					height: 100%; 
+					height: 100%;
 					display:block;
 				}
-				
-				
+
+
 				.listing-post-prev-img-container {}
 				.listing-post-prev-img-container a {
 					width: 100%;
@@ -601,8 +601,8 @@
 			    display: block;
 			    content: '';
 				}
-		
-		
+
+
 			#habit-of-the-day-img {width: 100%; background-size: cover; background-repeat: no-repeat; background-position: center;}
 			#habit-of-the-day-img::after {
 				padding-top: 52.2%;
@@ -611,20 +611,25 @@
 			}
 		/*.mobile-ad > *, .desktop-ad > * {display: none;}*/
 		.mobile-ad {max-width: 300px; margin: 0 auto;}
-		
+
 		.social-desc {display: none; vertical-align: baseline;}
+		li.custom-item8 {margin-left: 60px !important;}
 		li.custom-item9 {
 			margin-left: 5px !important;
 		}
 		li.custom-item8 a img,
 		li.custom-item9 a img {
 			vertical-align: middle;
+			margin-bottom: 4px;
 		}
+		.content-align-center .body-text {text-align: center;}
+		.mobile .article-cover-img-rectangle-wrap {margin-top: 0 !important; padding-top: 0!important;}
 		@media screen and (max-width: 767px) {
+			li.custom-item8 {margin-left: 0 !important;}
 			.social-desc {display: inline;}
 			li.custom-item8 a img,
 			li.custom-item9 a img {
-				vertical-align: baseline;
+				vertical-align: middle;
 			}
 			li.custom-item9 {
 				margin-left: 0 !important;
@@ -635,6 +640,7 @@
 			.article-cover-img-rectangle-wrap > .container,
 			.slider-wrapper .container
 			 {padding: 0;}
+			.main-nav .full-wrapper {margin: 0; width: 100%;}
 		}
         /* Override */
     </style>
@@ -668,7 +674,7 @@
 				return_html += '</div>';
 				return return_html;
 			}
-		
+
 			function template_article_list_item(post_id, post_tag, post_thumbnail, post_permalink, post_title, post_excerpt, post_outlink) {
 				var tmp_html = '';
 				tmp_html += '<div class="col-sm-6 col-md-4 col-lg-4 mb-40 mb-xs-40 article-list-item-wrap" data-post-id="'+post_id+'">';
@@ -685,7 +691,7 @@
 				tmp_html += '</div>';
 				return tmp_html;
 			}
-			
+
 			function tumblr_get_post(tagged, offset, size, callback_func) {
 				//console.log(tagged + " | " + offset + " | " + size + " | " + callback_func);
 				var tmp_total_available_post = '';
@@ -704,7 +710,7 @@
 					//console.log("reach available post");
 					return false;
 				}
-					
+
 				$.ajax({
 					type: "GET",
 					url : "https://api.tumblr.com/v2/blog/"+ window.location.host+"/posts",
@@ -731,60 +737,60 @@
 									var post_permalink = "";
 									var post_outlink = false;
 									var tmp_html = "";
-									
+
 									var article_setting = $('<div />').html(content_body);
 									post_id = post[i].id;
-									
+
 									if(callback_func=="listing" && get_current_tag()!=='featured story' && get_current_tag()!=='') {
 										post_tag = get_current_tag();
 									} else if(typeof post[i].tags!=='undefined') {
 										post_tag = (post[i].tags[0]!==undefined && post[i].tags[0].toLowerCase()=="featured story" && post[i].tags[1]!==undefined) ?post[i].tags[1] : post[i].tags[0] || '';
 									}
-									
+
 									/* if(article_setting.find('[data-name=article-cover-image-square]').length > 0) {
 										post_thumbnail = article_setting.find('[data-name=article-cover-image-square]').text() || article_setting.find('[data-name=article-cover-image-square] a').text()
 									} */
-									
+
 									//console.log(article_setting.html());
 									//console.log(article_setting.find('preimg:eq(0)').attr('src') || article_setting.find('[data-name=article-cover-image-square]').text() || article_setting.find('[data-name=article-cover-image-square] a').text());
-									
+
 									if(post[i].type==='photo' && post[i].photos[0].alt_sizes[0].url !== '' && post[i].photos[0].alt_sizes[0].url !== 'undefined' && post[i].photos[0].alt_sizes[0].url !== undefined && post[i].photos[0].alt_sizes[0].url !== null) {
 										post_thumbnail = post[i].photos[0].alt_sizes[0].url;
 									}
-									
+
 									if(post_thumbnail==='' && (article_setting.find('preimg').length > 0 || article_setting.find('[data-name=article-cover-image-square]').length > 0)) {
 										post_thumbnail = article_setting.find('preimg:eq(0)').attr('src') || article_setting.find('[data-name=article-cover-image-square]').text() || article_setting.find('[data-name=article-cover-image-square] a').text();
 									}
-									
+
 									post_title = post[i].title || article_setting.find('[data-name=article-title]').text() || '';
-									
+
 									//if(article_setting.find("p").length > 0) {
-										
+
 										for(k=0; k<=10; k++) {
 											if(article_setting.find("p:eq("+k+")").text()!=='') {
 												post_excerpt =  article_setting.find("p:eq("+k+")").text();
 												break;
 											}
 										}
-										
+
 										if(post_excerpt!=='') {
 											post_excerpt = post_excerpt.substring(0,35);
 										}
 									//}
 									//if(post_excerpt=='') {post_excerpt = article_setting.find('[data-name=article-excerpt]').text() || '';}
-									
+
 									if(article_setting.find('[data-name=article-outlink]').length > 0) {
 										post_permalink = article_setting.find('[data-name=article-outlink] a').text() || article_setting.find('[data-name=article-outlink]').text();
 										post_outlink = true;
 									} else {
 										post_permalink = post[i].short_url || post[i].post_url;
 									}
-									
+
 
 									switch (callback_func) {
 										case 'slide':
 											slides+=slide_template(post_thumbnail, post_permalink, "HomePageSlide"+i);
-											
+
 											if(slides!=="") {
 													var extra_class = (window.location.pathname.toLowerCase()=="/tagged/featured+story") ?"featured_story_slider" :"";
 													var slider_type = (window.location.pathname.toLowerCase()=="/tagged/featured+story") ?"item-carousel" :"work-full-slider";
@@ -793,7 +799,7 @@
 										case 'listing':
 											if(post_id!='' && post_thumbnail!='' && post_permalink!='') {
 												tmp_html = template_article_list_item(post_id, post_tag, post_thumbnail, post_permalink, post_title, post_excerpt, post_outlink);
-												
+
 												//Skip it if this post is added by the spreadsheets control panel
 												if(window.location.pathname=="/") {
 													if($('.article-list-item-wrap[data-post-id='+post_id+']').length == 0){
@@ -812,14 +818,14 @@
 												$('.other-related-post-wrap').show();
 												tmp_html = template_related_post_list_item(post_id, post_tag, post_thumbnail, post_permalink, post_title, post_excerpt, post_outlink);
 												//console.log(tmp_html);
-												$('.others-good-habits-wrap').append(tmp_html); 
+												$('.others-good-habits-wrap').append(tmp_html);
 											}
 											break;
-										default: 
+										default:
 											break;
 									}
 								}
-								
+
 							}
 							switch(callback_func) {
 								case 'slide':
@@ -829,7 +835,7 @@
 											owl.addItem(slides);
 											owl.reinit();
 										}, 1000);
-										
+
 									} else {
 										$("#main-jumbotron").remove();
 									}
@@ -866,7 +872,7 @@
 					}
 				});
 			}
-			
+
 			function removeDuplicatePost() {
 				if(window.location.pathname=="/") {
 						if($('.habit-of-the-day-wrap').length > 0 && $('.habit-of-the-day-wrap').data('post-id')!==undefined && $('.habit-of-the-day-wrap').data('post-id')!=='') {
@@ -875,22 +881,22 @@
 						}
 				}
 			}
-			
+
 			function get_current_tag() {
 				if(window.location.pathname == "/") {
 					return '';
 				}
 				return decodeURIComponent(window.location.pathname.replace('/tagged/','').replace('+', ' ').toLowerCase());
 			}
-			
+
 		</script>
-		
-		
+
+
 		{block:IndexPage}<script type="text/javascript">
 			$(document).ready(function() {
 				window.allow_listing_load_more = true;
 				tumblr_get_post(get_current_tag(), window.listing_post_offset, window.listing_post_per_page, 'listing');
-				
+
 				$(window).scroll(function() {
 					if($('#btn-load-more').visible(true) && window.allow_listing_load_more) {
 						window.allow_listing_load_more = false;
@@ -914,10 +920,10 @@
 						}
 					});
 				}
-				
+
 			});
 		</script>{/block:Posts}{/block:PermalinkPage}
-		
+
     <script type="text/javascript">
         /* Custom Function */
         /* ------------------------------------------------------------
@@ -938,7 +944,7 @@
         function replace_url(url, id) {
             return url.replace("__sheetid__", id);
         }
-				
+
 				function get_first_escape_tag(str) {
 					var return_tag = str.split(',')[0].trim();
 					if(return_tag.toLowerCase()=='featured story') {
@@ -1095,7 +1101,7 @@
                         ) {
                             tmp_footer_text = (jQuery(this)[0].gsx$footertext.$t)
                         }
-                        
+
                         var tmp_footer_hd = '';
                         if(
                                 typeof jQuery(this)[0].gsx$footerheaderdecoration!='undefined' &&
@@ -1104,7 +1110,7 @@
                         ) {
                             tmp_footer_hd = (jQuery(this)[0].gsx$footerheaderdecoration.$t)
                         }
-                        
+
                         var tmp_footer_ed = '';
                         if(
                                 typeof jQuery(this)[0].gsx$footerenddecoration!='undefined' &&
@@ -1113,7 +1119,7 @@
                         ) {
                             tmp_footer_ed = (jQuery(this)[0].gsx$footerenddecoration.$t)
                         }
-                        
+
                         var tmp_footer_link = '';
                         var tmp_footer_link_name = '立即登記';
                         if(
@@ -1127,7 +1133,7 @@
                             if(jQuery(this)[0].gsx$footerbuttonname.$t!='')
                             	tmp_footer_link_name = (jQuery(this)[0].gsx$footerbuttonname.$t)
                         }
-                        
+
                         var tmp_footer_link_bg_color = '#a61753';
                         var tmp_footer_link_text_color = '#fff';
                         var tmp_footer_border_style = 'btn-circle';
@@ -1142,7 +1148,7 @@
                             tmp_footer_link_bg_color = (jQuery(this)[0].gsx$footerlinkbgcolor.$t)
                             tmp_footer_link_text_color = (jQuery(this)[0].gsx$footerlinktextcolor.$t)
                         }
-                        
+
                         if(
                         	typeof jQuery(this)[0].gsx$footerborderstyle!='undefined' &&
                           typeof jQuery(this)[0].gsx$footerborderstyle.$t!='undefined' &&
@@ -1150,7 +1156,7 @@
                         ) {
                         	tmp_footer_border_style = 'btn-' + jQuery(this)[0].gsx$footerborderstyle.$t;
                         }
-                        
+
                         footer_templates.push({
                         	text:tmp_footer_text,
                         	fd_top:tmp_footer_hd,
@@ -1171,27 +1177,27 @@
                 if(footer_templates.text!='')
                     jQuery('.article-footer-info .article-publisher-desc').html(footer_templates.text);
                 if(footer_templates.fd_top!='') {
-                		jQuery('.footer-text-container .footer-decoration-top').css('background-image', 'url(' + footer_templates.fd_top + ')' ); 
+                		jQuery('.footer-text-container .footer-decoration-top').css('background-image', 'url(' + footer_templates.fd_top + ')' );
                 } else {
-                		jQuery('.footer-text-container .footer-decoration-top').remove(); 
+                		jQuery('.footer-text-container .footer-decoration-top').remove();
                 }
                 if(footer_templates.fd_end!='' || footer_templates.flink!=='') {
                 	if(footer_templates.fd_end!='') {
-                		jQuery('.footer-text-container .footer-decoration-end').css('background-image', 'url(' + footer_templates.fd_end + ')' ); 
+                		jQuery('.footer-text-container .footer-decoration-end').css('background-image', 'url(' + footer_templates.fd_end + ')' );
                 	}
                 	//jQuery('.article-footer-info .article-publisher-logo').html('<img src="'+footer_templates.logo+'" width="100%" />');
                 } else {
-                	jQuery('.footer-text-container .footer-decoration-end').remove(); 
+                	jQuery('.footer-text-container .footer-decoration-end').remove();
                 }
-                    
+
                 if(footer_templates.flink!='') {
-                		jQuery('.footer-text-container a.footer-decoration-end-button').attr('href', footer_templates.flink); 
-                		jQuery('.footer-text-container a.footer-decoration-end-button').css({'background-color':footer_templates.flinkbgcolor, 'color':footer_templates.flinktextcolor}); 
-                		jQuery('.footer-text-container a.footer-decoration-end-button').text(footer_templates.flink_name); 
-                		jQuery('.footer-text-container a.footer-decoration-end-button').addClass(footer_templates.flinkborderstyle); 
-                } else 
-             				jQuery('.footer-text-container a.footer-decoration-end-button').remove(); 	   		
-             		
+                		jQuery('.footer-text-container a.footer-decoration-end-button').attr('href', footer_templates.flink);
+                		jQuery('.footer-text-container a.footer-decoration-end-button').css({'background-color':footer_templates.flinkbgcolor, 'color':footer_templates.flinktextcolor});
+                		jQuery('.footer-text-container a.footer-decoration-end-button').text(footer_templates.flink_name);
+                		jQuery('.footer-text-container a.footer-decoration-end-button').addClass(footer_templates.flinkborderstyle);
+                } else
+             				jQuery('.footer-text-container a.footer-decoration-end-button').remove();
+
             } else {
                 jQuery('.article-footer-info').remove();
             }
@@ -1204,7 +1210,7 @@
 
         function slide_template(imgPath, target_url, slideName) {
             var tmp_html = "";
-            imgPath = imgPath.replace("_540", "_1280");
+            imgPath = imgPath.replace("_540", "_1280").replace("_500", "_1280");
             var currentPath = window.location.pathname;
             if((currentPath==="/" && slideName.indexOf("HomePageSlide") >= 0) || (currentPath==="/tagged/Featured+Story" && slideName.indexOf("FeaturedStorySlide")>=0)) {
 
@@ -1229,11 +1235,11 @@
 
             return tmp_first_tag[0];
         }
-		
+
 		/*Specific**/
 		var specific_posts_data;
 		var specific_posts_data_index = 0;
-		var specific_posts_insert_index = 2; 
+		var specific_posts_insert_index = 2;
 		var specific_page_firstLoad = true;
 		function get_specific_posts() {
             tab_no = 4;
@@ -1253,18 +1259,18 @@
 				tumblr_get_post_byId(postId, "listing");
 			}
 		}
-		
+
 		$(document).ready(function(){
 			if(window.location.pathname=="/") {
 				//get_specific_posts();
 			}
 		});
-		
-		
+
+
 		function tumblr_get_post_byId(postId, callback_func) {
 			//remove the duplicate posts
 			$('.article-list-item-wrap[data-post-id='+postId+']').remove();
-			
+
 			$.ajax({
 				type: "GET",
 				url : "https://api.tumblr.com/v2/blog/"+ window.location.host+"/posts",
@@ -1289,20 +1295,20 @@
 								var post_permalink = "";
 								var post_outlink = false;
 								var tmp_html = "";
-								
+
 								var article_setting = $('<div />').html(content_body);
 								post_id = post[i].id;
-								
+
 								if(callback_func=="listing" && get_current_tag()!=='featured story' && get_current_tag()!=='') {
 									post_tag = get_current_tag();
 								} else if(typeof post[i].tags!=='undefined') {
 									post_tag = (post[i].tags[0]!==undefined && post[i].tags[0].toLowerCase()=="featured story" && post[i].tags[1]!==undefined) ?post[i].tags[1] : post[i].tags[0] || '';
 								}
-								
+
 								if(article_setting.find('[data-name=article-cover-image-square]').length > 0) {
 									post_thumbnail = article_setting.find('[data-name=article-cover-image-square]').text() || article_setting.find('[data-name=article-cover-image-square] a').text()
 								}
-								
+
 								post_title = post[i].title || article_setting.find('[data-name=article-title]').text() || '';
 								post_excerpt = article_setting.find('[data-name=article-excerpt]').text() || '';
 								if(article_setting.find('[data-name=article-outlink]').length > 0) {
@@ -1311,13 +1317,13 @@
 								} else {
 									post_permalink = post[i].short_url || post[i].post_url;
 								}
-								
+
 
 								switch (callback_func) {
 									case 'listing':
 										if(post_id!='' && post_thumbnail!='' && post_permalink!='') {
 											tmp_html = template_article_list_item(post_id, post_tag, post_thumbnail, post_permalink, post_title, post_excerpt, post_outlink);
-											
+
 											if($(".article-list-item-wrap").length > 0 && $(".article-list-item-wrap").length >= 3){
 												var append_index = specific_posts_insert_index;
 												//console.log("append index");
@@ -1336,17 +1342,17 @@
 											$('.other-related-post-wrap').show();
 											tmp_html = template_related_post_list_item(post_id, post_tag, post_thumbnail, post_permalink, post_title, post_excerpt, post_outlink);
 											//console.log(tmp_html);
-											$('.others-good-habits-wrap').append(tmp_html); 
+											$('.others-good-habits-wrap').append(tmp_html);
 										}
 										break;
-									default: 
+									default:
 										break;
 								}
 
-								
-								
+
+
 							}
-							
+
 						}
 					}
 				},
@@ -1357,13 +1363,32 @@
 			});
 		}
 
-		
+
         /* Custom Function */
 
         $(document).ready(function() {
             $('.page-preloader').css({'display':'none'});
         });
     </script>
+
+	
+	<script type="text/javascript">
+		window._tags = "{block:Posts}{block:Tags}{Tag},{/block:Tags}{/block:Posts}";
+		if(window._tags!=="") {window._tags = window._tags.split(",");}
+		function search_tag(tag_name) {
+			var tag_exist = false;
+			if(tag_name!=="") {
+				$.each(window._tags, function(i, v) {
+					if( tag_name.trim().toLowerCase()==v.trim().toLowerCase()) {
+						tag_exist = true;
+					}
+				});
+			}
+			return tag_exist;
+		}
+	</script>
+	
+
 </head>
 <body data-urlencoded-name="{URLEncodedName}" class="{select:Layout}{block:IndexPage} index-page{/block:IndexPage}{block:PermalinkPage} permalink{/block:PermalinkPage}{block:LikesPage} likes-page{/block:LikesPage}{block:FollowingPage} following-page{/block:FollowingPage}{block:SearchPage} search-page{block:NoSearchResults} no-results{/block:NoSearchResults}{block:NoLikes} no-likes{/block:NoLikes}{block:NoFollowing} no-following{/block:NoFollowing}{/block:SearchPage}{block:HideHeaderImage} no-header-image{/block:HideHeaderImage}{block:NoStretchHeaderImage} contain-header-image{/block:NoStretchHeaderImage}{block:IfRelatedPosts} display-related-posts{/block:IfRelatedPosts}">
 <div id="fb-root"></div>
@@ -1518,7 +1543,7 @@
 														var current_tag_name = decodeURIComponent(window.location.pathname).replace(/\+/g,' ').replace('/tagged/', '').toLowerCase();
 														if(current_tag_name!=='/')
 															$('.desktop-nav ul li[data-tag="'+current_tag_name+'"]').addClass('current-tag');
-														else 
+														else
 															$('.desktop-nav ul li.custom-item1').addClass('current-tag');
 													}
 												</script>
@@ -1527,10 +1552,10 @@
 												<script type="text/javascript">
 													if(!mobilecheck()) {
 														var current_tag_name = get_first_tag("{block:Posts}{block:Tags}{Tag},{/block:Tags}{/block:Posts}").replace(/\+/g,' ').toLowerCase();
-														
+
 														$('.desktop-nav ul li[data-tag="'+current_tag_name+'"]').addClass('current-tag');
 													}
-												
+
 												</script>
 												{/block:PermalinkPage}
                     </div>
@@ -1579,12 +1604,12 @@
     </script>
 		<section id="main-jumbotron" class="page-section nopadding slider-wrapper mt-50 mt-xs-0"><div class="container"><div class="work-full-slider owl-carousel owl-theme">
 		</div></div></section>
-		
+
     <script type="text/javascript">
         slides = "";
         var tmp_slide_info = tumblr_get_post("featured story", 0, 5, "slide");
     </script>
-    
+
     {block:IfEnableFeaturedStorySlide1}
     <script type="text/javascript">
         slides += slide_template("{image:FeaturedStorySlide1}", "{text:FeaturedStorySlide1URL}", "FeaturedStorySlide1");
@@ -1617,7 +1642,7 @@
 					var slides = "";
 					var ele = "";
 					slides+='<a href="http://betterme-magazine.tumblr.com/post/144192591065/"><div class="features-item" style="background-image:url(https://67.media.tumblr.com/41b27e1ff38a7c66e84f2006a9fc6f75/tumblr_inline_o70g2nc0y31sbgoqr_540.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>用Wi-Fi連接網絡</span></div><div class="features-descr"> 吳業坤 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192444015/"><div class="features-item" style="background-image:url(https://66.media.tumblr.com/cfec5c3b749b51889bad11bb394398c7/tumblr_inline_o70gc1GAO11sbgoqr_540.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>避免耗用備用電源</span></div><div class="features-descr"> 熊仔頭 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192466430/"><div class="features-item" style="background-image:url(https://67.media.tumblr.com/db3e49a66229d0dc452aced06887d96a/tumblr_inline_o70gc7mJkb1sbgoqr_540.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>減少使用風筒</span></div><div class="features-descr"> Miss Sue </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192527965/"><div class="features-item" style="background-image:url(http://67.media.tumblr.com/14c5d81f6a283234eb68524174f331f8/tumblr_inline_o70gm3568C1u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>善用抽濕機降溫</span></div><div class="features-descr"> 杜小喬 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192155110/"><div class="features-item" style="background-image:url(http://66.media.tumblr.com/87491e04c5051d2b803b12f93ec98785/tumblr_inline_o70gqb4Kdb1u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>定期檢查雪櫃門縫</span></div><div class="features-descr"> 蘇麗珊 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144191266510/"><div class="features-item" style="background-image:url(http://65.media.tumblr.com/34930e19b4b0bc274f18615f7128ba0e/tumblr_inline_o70hgd3pso1u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>冷氣風扇同時使用</span></div><div class="features-descr"> 項明生 </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192547850/"><div class="features-item" style="background-image:url(http://65.media.tumblr.com/b9c10e95eb7ab0b68ae58294d680aa51/tumblr_inline_o70guz2RH11u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>善用剩餘冷氣</span></div><div class="features-descr"> Ding Ding </div></div></a><a href="http://betterme-magazine.tumblr.com/post/144192571155/"><div class="features-item" style="background-image:url(http://65.media.tumblr.com/afb2140dde5208660db59d7a4cbda252/tumblr_inline_o70gwiZS5t1u311uv_400.jpg); background-repeat:no-repeat; background-size:cover;"><div class="features-title font-alt mt-10"><span>選用合適洗衣程序</span></div><div class="features-descr"> 林奕匡 </div></div></a>';
-					
+
 					ele = '<section class="page-section nopadding featured_story_slider slider-wrapper mt-50 mt-xs-0"><div class="container"><div class="item-carousel owl-carousel owl-theme">';
 					ele += slides;
 					ele += '</div></div></section>';
@@ -1672,7 +1697,7 @@
 	                },
 	                dataType: "jsonp",
 	                success: function(data) {
-	                	//console.log(9);	
+	                	//console.log(9);
 	                	if(data.meta.status==200) {
 	                		if(typeof data.response.posts!=='undefined' && data.response.posts.length > 0) {
 	                			if(
@@ -1685,23 +1710,23 @@
 	                				if((data.response.posts[0].type=='photo')) {
 
 	                					$('.hotd-article-setting-wrapper').append(data.response.posts[0].caption);
-	
+
 							                daily_img = daily_img = data.response.posts[0].photos[0].alt_sizes[0].url || data.response.posts[0].image_permalink || '';
-							                
-							                daily_tmp_title = 
+
+							                daily_tmp_title =
 							                	$('.habit-of-the-day-wrap .hotd-article-setting-wrapper p:eq(0)').text().substr(0,10) ||
 							                	$('.habit-of-the-day-wrap .hotd-article-setting-wrapper > .article-setting:eq(0) > [data-name="article-title"]').text() || '';
 							            } else if(data.response.posts[0].type=='text') {
 							            	$('.hotd-article-setting-wrapper').append(data.response.posts[0].body);
-							            		daily_img =  
-							            		$('.habit-of-the-day-wrap .hotd-article-setting-wrapper img:eq(0)').attr('src') || 
-							            		$('.habit-of-the-day-wrap .hotd-article-setting-wrapper > .article-setting:eq(0) > [data-name="article-cover-image-rectangle"] a').text() || 
-							            		$('.habit-of-the-day-wrap .hotd-article-setting-wrapper > .article-setting:eq(0) > [data-name="article-cover-image-rectangle"]').text() || 
+							            		daily_img =
+							            		$('.habit-of-the-day-wrap .hotd-article-setting-wrapper img:eq(0)').attr('src') ||
+							            		$('.habit-of-the-day-wrap .hotd-article-setting-wrapper > .article-setting:eq(0) > [data-name="article-cover-image-rectangle"] a').text() ||
+							            		$('.habit-of-the-day-wrap .hotd-article-setting-wrapper > .article-setting:eq(0) > [data-name="article-cover-image-rectangle"]').text() ||
 							            		'';
 
 							            		daily_tmp_title = data.response.posts[0].title || '';
 							            }
-							            
+
 							            var daily_tmp_excerpt = "";
 							            for(l=0; l<=10; l++) {
 							            	if($('.habit-of-the-day-wrap .hotd-article-setting-wrapper p:eq('+l+')').text()!=='') {
@@ -1711,13 +1736,13 @@
 								            	}
 							            	}
 							            }
-							            
+
 							            if(daily_tmp_excerpt=="") {
-							            	daily_tmp_excerpt = 
-						                	$('.habit-of-the-day-wrap .hotd-article-setting-wrapper > .article-setting:eq(0) > [data-name="article-hotd-excerpt"]').text() || 
+							            	daily_tmp_excerpt =
+						                	$('.habit-of-the-day-wrap .hotd-article-setting-wrapper > .article-setting:eq(0) > [data-name="article-hotd-excerpt"]').text() ||
 						                	'';
 							            }
-						                
+
 						 								var daily_tmp_short_url = data.response.posts[0].short_url || data.response.posts[0].post_url || '';
 						                if(daily_img!=='' && daily_tmp_short_url!=='') {
 																$('.habit-of-the-day-wrap .post-prev-img a' ).html('<div id="habit-of-the-day-img" style="background-image:url('+daily_img+');" width="100%"></div>');
@@ -1729,13 +1754,13 @@
 						                        $('.habit-of-the-day-wrap .excerpt').text(daily_tmp_excerpt);
 						                    }
 						                    $('.habit-of-the-day-wrap').attr('data-post-id', data.response.posts[0]['id']);
-						                    
+
 						                    $('.hotd-article-setting-wrapper').remove();
-						
+
 						                } else {
 						                    $('.habit-of-the-day-wrap').remove();
 						                }
-	                				
+
 	                				/* Reserve for text post */
 		                		} else {
 		                			$('.habit-of-the-day-wrap').remove();
@@ -1763,7 +1788,7 @@
 
             <div class="row multi-columns-row article-list-item-container"></div>
 						<div style="text-align: center;">
-							<a id="btn-load-more" class="btn btn-mod btn-gray btn-medium btn-round" href="#" 
+							<a id="btn-load-more" class="btn btn-mod btn-gray btn-medium btn-round" href="#"
 							onclick="tumblr_get_post(get_current_tag(), window.listing_post_offset, window.listing_post_per_page, 'listing'); return false;">Load More</a>
 						</div>
         </div>
@@ -1777,7 +1802,7 @@
         		});
         	}
         </script>
-        
+
     </section>
     {/block:IndexPage}
     {block:PermalinkPage}{block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}
@@ -1793,8 +1818,15 @@
             </div>
         </div>
     </section>-->
+	<script type="text/javascript">
+		if(search_tag("fullBannerBgColor")) {
+			document.write('<section class="page-section article-cover-img-rectangle-wrap pb-0 pt-0 mt-0 pt-xs-0" style="background-color:#3a3a3a">');
+		} else {
+			document.write('<section class="page-section article-cover-img-rectangle-wrap pb-0 pt-0 mt-50 pt-xs-0">');
+		}
 
-    <section class="page-section article-cover-img-rectangle-wrap pb-0 pt-50 pt-xs-0">
+	</script>
+
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-md-offset-0 align-center">
@@ -1809,18 +1841,25 @@
     <section class="page-section pb-0 mb-140 pt-50">
         <div class="container {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} active exposed">
             <div class="row">
-                <div class="col-sm-8 col-md-8 col-md-offset-0">
+				<script type="text/javascript">
+					if(search_tag("contentFullWidth")) {
+						document.write('<div class="col-sm-12 col-md-12 col-md-offset-0 content-align-center" style="">');
+					} else {
+						document.write('<div class="col-sm-8 col-md-8 col-md-offset-0">');
+					}
+				</script>
+                <!--<div class="col-sm-8 col-md-8 col-md-offset-0">-->
 
                     <div class="article-info main-article-info">
                         <span class="article-category">{block:HasTags}{block:Tags}<span class="article-category-item"><a href="{TagURL}">{Tag}</a></span>{/block:Tags}{/block:HasTags} /</span>
                         <script type="text/javascript">
-                            
+
                             var first_tag_name = $('.main-article-info .article-category .article-category-item:eq(0) > a').text().trim().toLowerCase();
                             if(first_tag_name!='featured story')
                             	$('.main-article-info .article-category .article-category-item:gt(0)').remove();
-                            else 
+                            else
                             	$('.main-article-info .article-category .article-category-item:not(:eq(1))').remove();
-                            
+
                         </script>
                         <h3 class="article-title post-prev-title font-alt blog-item-title"><a href="{Permalink}">{block:Title}{title}{/block:Title}</a></h3>
                         <span class="article-excertpt"></span>
@@ -1833,7 +1872,6 @@
                             <div class="col-xs-6 col-sm-4 col-md-4 align-right"><div class="fb-like" data-href="{Permalink}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></div>
                         </div>
                     </div>
-
                     <section class="page-section nopadding ">
 
                         <div class="article-content">
@@ -1984,14 +2022,18 @@
                                 </div>
                             </div>
                             {/block:Answer}
-														
+
 														<div class="align-right"><div class="fb-like" data-href="{Permalink}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></div>
-														
+
                             {block:HasTags}
                             <div class="page-section nopadding mt-50 mb-30 article-tag-wrap">
                                 <div class="tags">
                                     {block:Tags}
-                                    <a href="{TagURL}" data-tag="{tag}">{tag}</a>
+									<script type="text/javascript">
+										if("{tag}"!=="" && "{tag}".trim().toLowerCase()!=="fullbannerbgcolor" && "{tag}".trim().toLowerCase()!=="contentfullwidth") {
+											document.write('<a href="{TagURL}" data-tag="{tag}">{tag}</a>');
+										}
+									</script>
                                     {/block:Tags}
                                 </div>
                             </div>
@@ -2002,7 +2044,7 @@
                                 	<div class="footer-decoration-top"></div>
                                 	<p class="article-publisher-desc"></p>
                                 	<div class="footer-decoration-end">
-                                		<a  class="footer-decoration-end-button btn btn-mod btn-small" href="" onclick="_tracking()" target="_blank">立即登記</a>	
+                                		<a  class="footer-decoration-end-button btn btn-mod btn-small" href="" onclick="_tracking()" target="_blank">立即登記</a>
                                 	</div>
                                 </div>
                             </div>
@@ -2023,7 +2065,7 @@
                                 var article_excerpt = $('.article-setting:eq(0) [data-name="article-excerpt"]').text() || '';
                                 var hide_default_related_article = $('.article-setting:eq(0) [data-name="hide-default-related-article"]').text() || '';
                                 var showing_cover_image = true;
-                                
+
                                 var footer_template = "";
                                 $('.article-content .tags a').each(function() {
                                 	var tmp_tag_text = $(this).text();
@@ -2031,20 +2073,20 @@
                                 		footer_template = tmp_tag_text.replace("footer_", "");
                                 		$(this).remove();
                                 	}
-                                	
+
                                 	//console.log("Tag : " + tmp_tag_text);
-                                	
+
                                 	if(tmp_tag_text.indexOf("hideCoverImage") >= 0) {
                                 		showing_cover_image = false;
                                 		$(this).remove();
                                 	}
-                                	
+
                                 });
-                                
+
                                 if(footer_template==="" && $('.article-setting:eq(0) [data-name="footer-template"]').length > 0) {
                                 	footer_template = $('.article-setting:eq(0) [data-name="footer-template"]').text();
                                 }
-                                
+
                                 if(footer_template!=="") {
                                     $('.article-footer-info').attr('data-slug', footer_template);
                                     get_article_footer(footer_template);
@@ -2053,7 +2095,7 @@
                                     $('.article-footer-info').attr('data-slug', "default");
                                     get_article_footer(footer_template);
                                 }
-                                
+
                                 /* Get first image in content as the cover image */
                                 if(showing_cover_image) {
                                 	if(
@@ -2061,13 +2103,14 @@
                                     $('.article-cover-img-rectangle-wrap .article-cover-img-rectangle').length > 0 &&
                                     $('.article-cover-img-rectangle-wrap .article-cover-img-rectangle').html().toString().trim()==''
 	                                ){
+	                                	article_cover_image_rectangle = article_cover_image_rectangle.replace("_540", "_1280").replace("_500", "_1280");
 	                                  $('.article-cover-img-rectangle-wrap .article-cover-img-rectangle').html('<img src="'+article_cover_image_rectangle+'" width="100%"/>');
 																		$('.article-content img:eq(0)').remove();
 	                                } else if(article_cover_image_rectangle=='' && $('.article-cover-img-rectangle-wrap .article-cover-img-rectangle').html().trim()=='') {
 	                                  $('.article-cover-img-rectangle-wrap .article-cover-img-rectangle').remove();
 	                                }
                                 }
-                                
+
                                 /* Get first image in content as the cover image */
 
                                 if(article_title!=='' && $('.main-article-info.article-info > .article-title > a').text().trim() == "") {
@@ -2081,7 +2124,20 @@
                                 if(hide_default_related_article==="true") {
                                     $('.other-related-post-wrap').remove();
                                 }
-
+								
+								if($('.article-content .post-content .body-text img').length > 0) {
+									$('.article-content .post-content .body-text img').each(function() {
+										var _src = $(this).attr('src');
+										_src = _src.replace('_540', '_1280').replace('_500', '_1280');
+										$(this).attr('src', _src);
+										$(this).attr('data-orig-width', "").attr("data-orig-height", "").attr("width", "").attr("height", "");
+										if($(this).parents('figure').length > 0) {
+											$(this).parents('figure').attr('data-orig-width', "").attr("data-orig-height", "");
+										}
+										
+									});
+								}
+								
                             });
                         </script>
 
@@ -2099,6 +2155,15 @@
 										</script>
                                 </div>
                             </section>
+
+							<!-- Testing ad function -->
+							{block:PermalinkPage}
+							<section class="col-xs-12">
+								<script type="text/javascript">
+									document.write('<scr'+'ipt language="JavaScript" type="text/javascript" src="//hk.adserver.yahoo.com/a?f=1197800697&at=hashtag='+tag+'&p=hk_promo_betterme&l=UMU&c=sr"></scr'+'ipt>');
+								</script>
+							</section>
+							{/block:PermalinkPage}
                         </div>
                         <!-- AD -->
                         <div class="page-section pb-0 pt-50 other-related-post-wrap mb-0">
@@ -2106,7 +2171,7 @@
 														<h3 class="override-section-title nomargin"><b>其他好習慣</b></h3><hr class="full-width">
 														<div class="others-good-habits-wrap"></div>
 														<div style="text-align: center;">
-															<a id="btn-load-more" class="btn btn-mod btn-gray btn-small btn-round" href="#" 
+															<a id="btn-load-more" class="btn btn-mod btn-gray btn-small btn-round" href="#"
 															onclick="tumblr_get_post($('.main-article-info .article-category .article-category-item > a').text(), window.related_post_offset, window.related_post_per_page, 'related_post'); return false;">Load More</a>
 														</div>
 													</div></div>
@@ -2114,33 +2179,49 @@
                     </section>
 
                 </div>
-                <div class=" col-sm-4 col-md-4 desktop-ad ad hidden-xs">
+				<script type="text/javascript">
+					if(!search_tag("contentFullWidth")) {
+						document.write('<div class=" col-sm-4 col-md-4 desktop-ad ad hidden-xs">');
+						if(!mobilecheck()) {
+							//var tag = get_first_escape_tag("{block:Tags}{Tag},{/block:Tags}");
+							var tag = "{block:Tags}{Tag};{/block:Tags}";
+							document.write('<scr'+'ipt language=\'JavaScript\' type=\'text/javascript\' src=\'//hk.adserver.yahoo.com/a?f={text:SpaceID}&at=hashtag="'+tag+'"&p=hk_promo_betterme&l=LREC&c=sr\'></scr'+'ipt>');
+						}
+						document.write('</div>');
+
+					} else {
+						//document.write('<div class=" col-sm-4 col-md-4 desktop-ad ad hidden-xs" style="display: none;">')
+					}
+
+
+				</script>
+                <!--<div class=" col-sm-4 col-md-4 desktop-ad ad hidden-xs">-->
                 <!--<a onclick="tracking('lrec')" href="https://www.clp.com.hk/poweryourlove/?lang=zh-HK&medias=yahooKplus300x250-lrec&campaign=pyl2016&utm_source=yahoocm2016Kplus300x250-lrec&utm_medium=Kplus300x250-lrec&utm_campaign=pyl2016"><img src="http://static.tumblr.com/3yh6fjw/lg8o72alb/lrec.jpg" width="300px"></a>-->
                 <!--<a onclick="tracking('lrec')" href="https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=20&mc=click&pli=17747333&PluID=0&ord=${CACHEBUSTER}"><img src="http://static.tumblr.com/3yh6fjw/lg8o72alb/lrec.jpg" width="300px"></a>-->
-	                  <script type="text/javascript">
-											if(!mobilecheck()) {
-												//var tag = get_first_escape_tag("{block:Tags}{Tag},{/block:Tags}");
-												var tag = "{block:Tags}{Tag};{/block:Tags}";
-												document.write('<scr'+'ipt language=\'JavaScript\' type=\'text/javascript\' src=\'//hk.adserver.yahoo.com/a?f={text:SpaceID}&at=hashtag="'+tag+'"&p=hk_promo_betterme&l=LREC&c=sr\'></scr'+'ipt>');
-											}
-										</script>
-										<!--<script language='JavaScript' type='text/javascript' src='//hk.adserver.yahoo.com/a?f={text:SpaceID}&p=hk_promo_betterme&l=LREC&c=sr'></script>-->
+				<!--<script type="text/javascript">
+					if(!mobilecheck()) {
+						//var tag = get_first_escape_tag("{block:Tags}{Tag},{/block:Tags}");
+						var tag = "{block:Tags}{Tag};{/block:Tags}";
+						document.write('<scr'+'ipt language=\'JavaScript\' type=\'text/javascript\' src=\'//hk.adserver.yahoo.com/a?f={text:SpaceID}&at=hashtag="'+tag+'"&p=hk_promo_betterme&l=LREC&c=sr\'></scr'+'ipt>');
+					}
+				</script>-->
+				<!--<script language='JavaScript' type='text/javascript' src='//hk.adserver.yahoo.com/a?f={text:SpaceID}&p=hk_promo_betterme&l=LREC&c=sr'></script>-->
                 </div>
 
             </div>
         </div>
-        
+
     </section>
-		
+
 		<script type="text/javascript">
 		function _tracking() {
 			ga('send', 'event', 'Article Footer Button', "{PostID}");
-		}	
+		}
 		</script>
     {/block:Posts}{/block:PermalinkPage}
 
     <hr class="full-width">
-    
+
     <footer class="ft-section bg-white footer" id="page-footer">
         <div class="footer-wrap"></div>
 
@@ -2214,8 +2295,8 @@
     function tracking(ad){
 			ga('send', 'event', 'Ad Behavior', ad);
 		}
-		
-		
+
+
 </script>
 {/block:IfGoogleAnalyticsID}
 
@@ -2295,7 +2376,8 @@
 <script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/XuMo5z95v/wow.min.js"></script>
 <script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/hZko5z967/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/GICo5z96o/jquery.simple-text-rotator.min.js"></script>
-<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/3N2ofwc2w/all.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/Vswoh6tlt/all.js"></script>
+<!--<script type="text/javascript" src="http://promo.ynet.vicosys.com.hk/tumblr/betterme/all.js"></script>-->
 <script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/1muo5z979/contact-form.js"></script>
 <script type="text/javascript" src="http://static.tumblr.com/3yh6fjw/8tMo5z97p/jquery.ajaxchimp.min.js"></script>
 
@@ -2306,5 +2388,21 @@
 <!--<script language="JavaScript" type="text/javascript" src="https://hk.adserver.yahoo.com/a?f={text:SpaceID}&p=hk_promo_betterme&l=AN1&c=sr"></script>-->
 <!--<noscript><iframe src="https://hk.adserver.yahoo.com/a?f={text:SpaceID}&p=hk_promo_betterme&l=AN1&c=sh&bg=ffffff" width="0px" height="0px" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" ALLOWTRANSPARENCY="true"></noscript> -->
 
+<script type="text/javascript">
+	if(search_tag("contentfullwidth")) {
+		$('.article-info.main-article-info').hide();
+	}
+</script>
+
+<script type="text/javascript">
+var axel = Math.random() + "";
+var a = axel * 10000000000000;
+document.write('<iframe src="https://6396576.fls.doubleclick.net/activityi;src=6396576;type=invmedia;cat=gktpzpmx;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+</script>
+<noscript>
+<iframe src="https://6396576.fls.doubleclick.net/activityi;src=6396576;type=invmedia;cat=gktpzpmx;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+</noscript>
+
 </body>
 </html>
+
